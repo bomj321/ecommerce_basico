@@ -29,7 +29,7 @@
         <div class="animate form login_form">
           <section class="login_content">
 
-    <?php echo form_open('auth/login');  ?><!--FORMULARIO CIERRE Y APERTURA-->
+    <?php echo form_open('login/login');  ?><!--FORMULARIO CIERRE Y APERTURA-->
 
               <h1>Inicio de Sesi&oacute;n</h1>
 	              <?php if($this->session->flashdata("error")):?>

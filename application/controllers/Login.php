@@ -2,29 +2,51 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
+		public function __construct(){
+			parent::__construct();
+			$this->load->model("Usuarios_model");
+		}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('login/login');
-	}
+			public function index()
+			{
+				$this->load->view('login/login');
+			}
 
-	public function login()
-	{
+			public function login()
+			{
+							$usuario    = $this->input->post("usuario");
+							$contraseña = $this->input->post("contraseña");
 
-	}
+
+					  	$this->form_validation->set_rules("usuario","Nombre del Usuario","required");
+							$this->form_validation->set_rules("contraseña","Contraseña","required");
+
+							if ($this->form_validation->run()) {
+										$res = $this->Usuarios_model->login($usuario, $contraseña);
+
+										if (!$res) {
+											$this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");
+											$this->index();
+										}else{
+											$data  = array(
+												'id_usuario'         => $res->id_usuario,
+												'nombre_persona'     => $res->nombre_usuario,
+												'dni_usuario'        => $res->dni_usuario,
+												'email_usuario'      => $res->email_usuario,
+												'tipo_usuario'       => $res->tipo_usuario,
+												'login'              => TRUE
+											);
+											$this->session->set_userdata($data);
+											redirect(base_url()."dashboard");
+										}
+						}else{
+							$this->index();
+						}
+			}
+
+			public function logout()
+			{
+				$this->session->sess_destroy();
+				redirect(base_url());
+			}
 }

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Sistema Monedas</title>
+    <title>Gesti&oacute;n Interna</title>
 
     <!-- Bootstr<?php echo base_url();?>-->
     <link href="<?php echo base_url();?>public/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,11 +36,7 @@
      <!-- Datatables -->
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url();?>public/zoomy.css" rel="stylesheet">
     <link href="<?php echo base_url();?>public/build/css/custom.min.css" rel="stylesheet">
-    <!--ESTILOS MAPA-->
-    <link href="<?php echo base_url();?>public/css_mapa/estilos_mapa.css" rel="stylesheet">
-    <!--ESTILOS MAPA-->
 
     <!--FUENTES DE LETRAS-->
     <link href="https://fonts.googleapis.com/css?family=Gugi|Mogra" rel="stylesheet">
@@ -63,7 +59,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo base_url(); ?>dashboard" class="site_title"><i class="fa fa-paw"></i><span>Monedas Mex.</span></a>
+              <a href="<?php echo base_url(); ?>dashboard" class="site_title"><i class="fa fa-euro"></i><span>Ecommerce Esp.</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -87,52 +83,41 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                   <?php if($this->session->userdata("tipo_usuario")==1 ):?>
-                        <li><a><i class="fa fa-list"></i> Atributos <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-tags"></i> Ropa <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                           <!-- <li><a href="<?php echo base_url();?>attrbillete/list">Control de Atributos Billetes</a></li>-->
-                            <li><a href="<?php echo base_url();?>attrmoneda/list/Información_general">Control de Atributos Monedas</a></li>
+                            <li><a href="<?php echo base_url();?>ropa/list/">Control de Prendas</a></li>
+                            <li><a href="<?php echo base_url();?>ropa/add/">Subir Prenda</a></li>
                           </ul>
                         </li>
-                      <?php endif; ?>
-                    <li><a><i class="fa fa-money"></i> Catalagos<span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-user"></i> Usuarios<span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                           <!--<li><a href="<?php echo base_url();?>billetes/list">Billetes</a></li>-->
-                        <li><a href="<?php echo base_url();?>monedas/list">Monedas</a></li>
+                        <li><a href="<?php echo base_url();?>usuario/list">Control de Usuario</a></li>
                       </ul>
                     </li>
 
-                   <li><a><i class="fa fa-list-alt"></i> Colección Personal <span class="fa fa-chevron-down"></span></a>
+                   <li><a><i class="fa fa-envelope"></i> Email<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                        <!--<li><a href="<?php echo base_url();?>collectionb/list">Colecci&oacute;n de Billetes</a></li>-->
-                      <li><a href="<?php echo base_url();?>collectionm/list">Colecci&oacute;n de Monedas</a></li>
+                      <li><a href="<?php echo base_url();?>email/list">Control de Emails</a></li>
                     </ul>
                   </li>
 
 
-                  <li><a><i class="fa fa-shopping-cart"></i> Mercado <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-list-alt"></i> Menus <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      <!-- <li><a href="<?php echo base_url();?>mercadob/list">Billetes</a></li>-->
-                     <li><a href="<?php echo base_url();?>mercadom/list">Monedas</a></li>
-                      <li><a href="<?php echo base_url();?>mercadob/listb">Busquedas de Billetes</a></li>
-                     <li><a href="<?php echo base_url();?>mercadom/listb">Busquedas de Monedas</a></li>
+                     <li><a href="<?php echo base_url();?>menu/menu">Control de Menus</a></li>
+                      <li><a href="<?php echo base_url();?>menu/submenu">Control de SubMenus</a></li>
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-file-text"></i> Sugerencias <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-money"></i> Pagos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>sugerencias/list">Listado de Sugerencias</a></li>
+                      <li><a href="<?php echo base_url();?>pago/list">Listado de Pagos</a></li>
                     </ul>
                   </li>
 
-                   <li><a><i class="fa fa-paypal"></i> Membresías <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                     <?php if($this->session->userdata("tipo_usuario")==1 ):?>
-                       <li><a href="<?php echo base_url();?>membresias/list">Listado de Membresías</a></li>
-                      <?php endif; ?>
-                      <li><a href="<?php echo base_url();?>membresias/inf">Estado de mi Membresía</a></li>
-                    </ul>
-                  </li>
 
                 </ul>
               </div>
@@ -157,7 +142,7 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="<?php echo base_url(); ?>auth/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo base_url(); ?>login/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
@@ -241,10 +226,6 @@
     <script src="<?php echo base_url();?>public/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="<?php echo base_url();?>public/vendors/pdfmake/build/vfs_fonts.js"></script>
 
-    <!--ESTILOS MAPA-->
-     <script src="<?php echo base_url();?>public/js_mapa/imageMapResizer.min.js"></script>
-     <script src="<?php echo base_url();?>public/js_mapa/jquery.maphighlight.min.js"></script>
-    <!--ESTILOS MAPA-->
 
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url();?>public/build/js/custom.min.js"></script>
@@ -253,7 +234,6 @@
     <!--GRAFICAS-->
 
     <!--Scripts Personalizados-->
-     <script src="<?php echo base_url();?>public/zoomy.js"></script>
      <script src="<?php echo base_url();?>public/app.js"></script>
 
 

@@ -33,7 +33,7 @@
                                          <td><?php echo $usuario->dni_usuario;?></td>
                                          <td><?php echo $usuario->email_usuario;?></td>
                                          <td>
-                                             <a title="Enviar Correo" href="<?php echo base_url();?>menu/edit_view/<?php echo $usuario->id_usuario;?>" class="btn btn-primary btn-check"><span class="fa fa-envelope"></span></a>
+                                             <a title="Enviar Correo" href="<?php echo base_url();?>usuario/enviar_correo/<?php echo $usuario->id_usuario;?>" class="btn btn-primary btn-check"><span class="fa fa-envelope"></span></a>
 
 
 

@@ -29,5 +29,17 @@ class Usuarios_model extends CI_Model {
 	   return $this->db->insert("usuarios",$data);
 	}
 
+	public function get_usuario($id_usuario)
+	{
+		$this->db->where("id_usuario",$id_usuario);
+		$resultado = $this->db->get('usuarios');
+		return $resultado->row();
+	}
+
+	public function count_usuario()
+	{
+		return $this->db->count_all('usuarios');
+	}
+
 
 }

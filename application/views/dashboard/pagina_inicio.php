@@ -24,21 +24,21 @@
 
 										<div class="row pagina_inicio">
 												<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-													<button class="btn btn-primary btn-block"> 20 Prendas</button>
+													<button class="btn btn-primary btn-block"><?php echo $total_ropa ?> Prendas</button>
 												</div>
 
 												<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-													<button class="btn btn-success btn-block"> 50 Usuarios</button>
-
-												</div>
-
-												<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-													<button class="btn btn-warning btn-block">100 Compras</button>
+													<button class="btn btn-success btn-block"><?php echo $total_usuarios ?> Usuarios</button>
 
 												</div>
 
 												<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-													<button class="btn btn-danger btn-block">Total: 20000 Euros</button>
+													<button class="btn btn-warning btn-block"><?php echo $total_pagos ?> Compras</button>
+
+												</div>
+
+												<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+													<button class="btn btn-danger btn-block">Total: <?php echo $monto_pagos->total_compra ?> Euros</button>
 
 												</div>
 										</div>

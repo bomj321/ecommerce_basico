@@ -224,7 +224,8 @@
     <script src="<?php echo base_url();?>public/vendors/jszip/dist/jszip.min.js"></script>
     <script src="<?php echo base_url();?>public/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="<?php echo base_url();?>public/vendors/pdfmake/build/vfs_fonts.js"></script>
-
+    <!--ALERTAS PERSONALIZADAS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url();?>public/build/js/custom.min.js"></script>

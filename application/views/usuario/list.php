@@ -32,12 +32,8 @@
                                          <td><?php echo $usuario->nombre_usuario;?></td>
                                          <td><?php echo $usuario->dni_usuario;?></td>
                                          <td><?php echo $usuario->email_usuario;?></td>
-                                         <td>
-                                             <a title="Enviar Correo" href="<?php echo base_url();?>usuario/enviar_correo/<?php echo $usuario->id_usuario;?>" class="btn btn-primary btn-check"><span class="fa fa-envelope"></span></a>
-
-
-
-
+                                         <td id="git_carga<?php echo $usuario->id_usuario?>">
+                                             <a title="Enviar Correo" onclick="enviar_correo(<?php echo $usuario->id_usuario;?>,<?php echo $usuario->id_usuario ?>)" class="btn btn-primary btn-check"><span class="fa fa-envelope"></span></a>
                                          </td>
                                      </tr>
                                  <?php endforeach;?>

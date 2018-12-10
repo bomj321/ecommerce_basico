@@ -20,4 +20,18 @@ class Pagos_model extends CI_Model {
     $this->db->where('id_compra', $id);
 		return $this->db->update('compras', $data);
   }
+
+	public function count_pagos()
+	{
+		return $this->db->count_all('compras');
+	}
+
+	public function monto_pagos()
+	{
+
+		$this->db->select("SUM(total_compra) as total_compra");
+		$this->db->from("compras");
+		$resultados = $this->db->get();
+		return $resultados->row();
+	}
 }

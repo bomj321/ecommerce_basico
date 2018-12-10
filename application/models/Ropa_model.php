@@ -48,4 +48,10 @@ class Ropa_model extends CI_Model {
 		return $this->db->update('ropa_tienda', $data);
 	}
 
+	public function count_ropa()
+	{
+		$this->db->where('estado_ropa','1');
+		return $this->db->count_all('ropa_tienda');
+	}
+
 }

@@ -17,6 +17,13 @@ class Usuarios_model extends CI_Model {
 	}
 
 
+	public function list()
+	{
+		$this->db->where("tipo_usuario",'2');
+		$resultados = $this->db->get('usuarios');
+		return $resultados->result();
+	}
+
 	public function add_user($data)
 	{
 	   return $this->db->insert("usuarios",$data);

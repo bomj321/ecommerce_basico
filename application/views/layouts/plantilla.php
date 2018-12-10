@@ -86,7 +86,6 @@
                         <li><a><i class="fa fa-tags"></i> Ropa <span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
                             <li><a href="<?php echo base_url();?>ropa/list/">Control de Prendas</a></li>
-                            <li><a href="<?php echo base_url();?>ropa/add/">Subir Prenda</a></li>
                           </ul>
                         </li>
                     <li><a><i class="fa fa-user"></i> Usuarios<span class="fa fa-chevron-down"></span></a>

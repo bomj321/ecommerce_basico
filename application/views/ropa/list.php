@@ -38,10 +38,10 @@
                                          <td><?php echo $ropa_subida->titulo_ropa;?></td>
                                          <td><?php echo $ropa_subida->color_ropa;?></td>
                                          <td><?php echo $ropa_subida->descripcion_ropa;?></td>
-																				 <td>
-																					<center><button type="button" class="btn btn-<?php echo $ropa_subida->cantidad_ropa < 10 ? 'warning' : 'success' ?> btn-block"> <?php echo $ropa_subida->cantidad_ropa;?></button></center>
-																				 </td>
-																				 <td><?php echo $ropa_subida->precio_ropa;?> E</td>
+										 <td>
+											<center><button type="button" class="btn btn-<?php echo $ropa_subida->cantidad_ropa < 10 ? 'warning' : 'success' ?> btn-block"> <?php echo $ropa_subida->cantidad_ropa;?></button></center>
+										 </td>
+										 <td><?php echo $ropa_subida->precio_ropa;?> E</td>
                                          <td>
                                            <?php if (!empty($ropa_subida->imagen_ropa)): ?>
                                             <center><img src="<?php echo base_url().'public/images_ropa/'.$ropa_subida->imagen_ropa?>" style='width: 50px; height: 50px;' /></center>
@@ -52,8 +52,8 @@
                                          <td><?php echo $ropa_subida->nombre_tipo_ropa;?></td>
                                          <td><?php echo $ropa_subida->nombre_subtipo_ropa;?></td>
                                          <td>
-																					 <a title="Editar Ropa" href="<?php echo base_url();?>ropa/edit_view/<?php echo $ropa_subida->id_ropa_tienda;?>" class="btn btn-success btn-check"><span class="fa fa-pencil"></span></a>
-																		      <a title="Eliminar Ropa" onclick="return confirm('Estas seguro de querer eliminar esta prenda?')" href="<?php echo base_url();?>ropa/delete/<?php echo $ropa_subida->id_ropa_tienda;?>" class="btn btn-danger "><span class="fa fa-trash-o"></span></a>
+											 <a title="Editar Ropa" href="<?php echo base_url();?>ropa/edit_view/<?php echo $ropa_subida->id_ropa_tienda;?>" class="btn btn-success btn-check"><span class="fa fa-pencil"></span></a>
+								      <a title="Eliminar Ropa" onclick="return confirm('Estas seguro de querer eliminar esta prenda?')" href="<?php echo base_url();?>ropa/delete/<?php echo $ropa_subida->id_ropa_tienda;?>" class="btn btn-danger "><span class="fa fa-trash-o"></span></a>
 
                                          </td>
                                      </tr>

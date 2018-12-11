@@ -1,0 +1,132 @@
+/*NUEVA FUENTE DE LETRA*/
+*
+{
+	font-family: 'Gugi', cursive;
+}
+
+/*NUEVA FUENTE DE LETRA*/
+
+
+/*SLIDER*/
+.clases_slider .carousel-inner img 
+{
+	max-height: 500px;
+	margin-bottom: 200px;
+}
+/*SLIDER*/
+
+
+/*CARDS*/
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.row-equal .card-block
+{
+  margin-top: 20px;
+}
+
+
+
+/*CARDS*/
+
+/*MENSAJE TIENDA*/
+.mensaje_clasess h1
+{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.mensaje_clasess p
+{
+  margin-top: 50px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+/*MENSAJE TIENDA*/
+
+/*REDES SOCIALES*/
+.redes_sociales
+{
+  margin-top: 30px;
+}
+
+.redes_sociales h1
+{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.redes_sociales .fab
+{
+  font-size: 3rem;
+  margin-left: 10px;
+  color: black;
+
+
+}
+
+.links_redes_sociales
+{
+	margin-top: 20px;
+}
+
+.links_redes_sociales .twitter
+{
+  color: #d9534f;
+}
+
+.links_redes_sociales .facebook
+{
+  color: #5bc0de;
+}
+
+.links_redes_sociales .google
+{
+  color: #5cb85c;
+}
+
+.links_redes_sociales .instagram
+{
+  color: #428bca;
+}
+
+
+/*REDES SOCIALES*/
+
+
+/*FOOTER*/
+.footer_clasess
+{
+  margin-top: 50px;
+}
+/*FOOTER*/

@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if (!$this->session->userdata("login")) {
-			redirect(base_url());
+			redirect(base_url()."index");
 		}
 		$this->load->model('Ropa_model');
 		$this->load->model('Usuarios_model');
@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller {
 			'total_usuarios' => $this->Usuarios_model->count_usuario(),
 			'total_pagos'    => $this->Pagos_model->count_pagos(),
 			'monto_pagos'    => $this->Pagos_model->monto_pagos()
-		);		
+		);
 
 		$this->layout->view("pagina_inicio",$data);
 

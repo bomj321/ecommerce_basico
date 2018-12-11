@@ -6,7 +6,7 @@ class Pago extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if (!$this->session->userdata("login")) {
-			redirect(base_url());
+			redirect(base_url()."index");
 		}
 		$this->load->model('Pagos_model');
 

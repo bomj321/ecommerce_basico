@@ -7,7 +7,7 @@ class Usuario extends CI_Controller {
 		parent::__construct();
 		error_reporting(E_ALL);
 		if (!$this->session->userdata("login")) {
-			redirect(base_url());
+			redirect(base_url()."index");
 		}
 		$this->load->model('Usuarios_model');
 		$this->load->model('Email_model');

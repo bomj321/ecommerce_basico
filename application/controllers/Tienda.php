@@ -2,15 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tienda extends CI_Controller {
-		public function __construct(){
-			parent::__construct();
-			$this->load->model("Usuarios_model");
-		}
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("Usuarios_model");
+	}
 
-			public function index()
-			{
-        $this->layout_tienda->view("inicio");
-			}
+	public function index()
+	{
+		$this->layout_tienda->view("inicio");
+	}
 
 			/*public function login()
 			{
@@ -49,4 +49,44 @@ class Tienda extends CI_Controller {
 				$this->session->sess_destroy();
 				redirect(base_url()."index");
 			}*/
+/**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
+public function inicio(){
+			$this->layout_tienda->view("register/inicio_sesion");
+
+}
+
+public function registrate(){
+			$this->layout_tienda->view("register/register_usuario");
+
+}
+
+/**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
+
+
+
+/**********************************************SECCION DE VER ROPA**********************************************/
+public function tienda(){
+			$this->layout_tienda->view("tienda/articulos");
+
+}
+
+/**********************************************SECCION DE VER ROPA**********************************************/
+public function carrito(){
+			$this->layout_tienda->view("tienda/carrito");
+
+}
+
+/*public function add_carrito(){
+			$this->layout_tienda->view("tienda/articulos");
+
+}*/
+
+/**********************************************SECCION DE COMPRA**********************************************/
+
+
+
+/**********************************************SECCION DE COMPRA**********************************************/
+
+
+
 }

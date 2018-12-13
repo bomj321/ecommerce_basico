@@ -8,7 +8,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Ropas</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Ropas</a></center>
                             </h2>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Abrigos</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Abrigos</a></center>
                             </h2>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Zandalias</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Zandalias</a></center>
                             </h2>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Shorts</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Shorts</a></center>
                             </h2>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Camisas</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Camisas</a></center>
                             </h2>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="card-block p-t-2">
                             <h2>
-                                <center><a href='#' class="btn btn-success">Franelas</a></center>
+                                <center><a href='<?php echo base_url();?>tienda/tienda' class="btn btn-success">Franelas</a></center>
                             </h2>
                         </div>
                     </div>

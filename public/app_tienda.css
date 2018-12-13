@@ -10,7 +10,7 @@
 /*SLIDER*/
 .clases_slider .carousel-inner img 
 {
-	max-height: 500px;
+	max-height: 600px;
 	margin-bottom: 200px;
 }
 /*SLIDER*/
@@ -130,3 +130,54 @@
   margin-top: 50px;
 }
 /*FOOTER*/
+
+/*CSS PARA EL FORMULARIO DE INICIO*/
+.formulario_inicio
+{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.titulo_inicio
+{
+  margin-top: 180px;
+}
+
+hr
+{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+/*CSS PARA EL FORMULARIO DE INICIO*/
+
+
+
+/*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
+.borderless { border: 0 none; }
+
+.tienda_productos img{
+  width: 100%;
+  height: 700px;
+}
+/*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
+
+
+
+/*CSS PARA EL CARRITO DE COMPRA*/
+.carrito_compra{
+  margin-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.boton_comprar{
+  margin-top: 70px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/*CSS PARA EL CARRITO DE COMPRA*/

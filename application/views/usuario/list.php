@@ -21,7 +21,7 @@
                                  <th>Nombre del Usuario</th>
                                  <th>DNI del Usuario</th>
                                  <th>Email del Usuario</th>
-																 <th>Acciones</th>
+								<th>Acciones</th>
                              </tr>
                          </thead>
                          <tbody>

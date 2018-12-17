@@ -2,15 +2,15 @@
 <div class="row boton_comprar">
 	
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-							<a  href="" class="btn btn-primary">COMPRAR POR PAYPAL</a>
+							<a  href="" class="btn btn-primary btn-block">COMPRAR POR PAYPAL</a>
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<a  href="" class="btn btn-verde">COMPRAR POR REDYS</a>
+				<a  href="" class="btn btn-verde btn-block">COMPRAR POR REDYS</a>
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<a  href="" class="btn btn-warning">TOTAL DE LA COMPRA: 15555 EUROS</a>
+				<a  href="" class="btn btn-warning btn-block">TOTAL: 15555 EUROS</a>
 			</div>
 		
 </div>

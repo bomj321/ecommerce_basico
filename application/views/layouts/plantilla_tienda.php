@@ -24,6 +24,8 @@
     <!--CSS DATATABLE-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css"/>
+
     <!--CSS DATATABLE-->
     <link href="<?php echo base_url();?>public/app_tienda.css" rel="stylesheet">
 
@@ -53,6 +55,8 @@
 <!--SCRIPT DATATABLE-->
   <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
 <!--SCRIPT DATATABLE-->  
   <script src="<?php echo base_url();?>public/app_tienda.js"></script>
 

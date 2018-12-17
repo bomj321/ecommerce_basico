@@ -2,6 +2,7 @@
 /*JS PARA LAS TABLAS DE LA TIENDA*/
 $( document ).ready(function() {
 			     $("#carrito").DataTable({
+			     	responsive: true,			     	
 			         language: {
 			            "sProcessing":     "Procesando...",
 			            "sLengthMenu":     "Mostrar _MENU_ registros",

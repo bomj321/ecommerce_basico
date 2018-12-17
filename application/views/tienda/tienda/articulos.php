@@ -2,14 +2,14 @@
 	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-top: 50px">
 <!--PRIMER LISTADO-->
 		<p>
-			<button class="btn btn-block btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			<button class="btn btn-block btn-primary collapse_boton" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
     				Button with data-target
 			 </button>
 		</p>
 
-		<div class="collapse" id="collapseExample">
+		<div class="collapse" id="collapse">
 		  <div class="card-body">	
-				<ul class="list-group">
+				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="" title="">apibus ac facilisis inD</a></li>
 					  <li class="list-group-item borderless"><a href="" title="">Morbi leo risus</a></li>
@@ -24,14 +24,14 @@
 
 <!--SEGUNDO LISTADO-->
 		<p>
-			<button class="btn btn-block btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+			<button class="btn btn-block btn-primary collapse_boton" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
     				Button with data-target
 			 </button>
 		</p>
 
-		<div class="collapse" id="collapseExample2">
+		<div class="collapse" id="collapse2">
 		  <div class="card-body">	
-				<ul class="list-group">
+				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="">Dapibus ac facilisis in</a></li>
 					  <li class="list-group-item borderless"><a href="">Morbi leo risus</a></li>
@@ -45,14 +45,14 @@
 
 <!--TERCERO LISTADO-->
 		<p>
-			<button class="btn btn-block btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample2">
+			<button class="btn btn-block btn-primary collapse_boton" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
     				Button with data-target
 			 </button>
 		</p>
 
-		<div class="collapse" id="collapseExample3">
+		<div class="collapse" id="collapse3">
 		  <div class="card-body">	
-				<ul class="list-group">
+				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="">Dapibus ac facilisis in</a></li>
 					  <li class="list-group-item borderless"><a href="">Porta ac consectetur ac</a></li>

@@ -6,7 +6,7 @@
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<a  href="" class="btn btn-success">COMPRAR POR REDYS</a>
+				<a  href="" class="btn btn-verde">COMPRAR POR REDYS</a>
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">

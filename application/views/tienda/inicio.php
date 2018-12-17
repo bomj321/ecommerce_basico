@@ -4,13 +4,13 @@
 			<div id="slider_ropa" class="carousel slide" data-ride="carousel">
 				  <div class="carousel-inner">
 						    <div class="carousel-item active">
-						      <img class="d-block w-100" src="<?php echo base_url().'public/images/prod-1.jpg'?>" alt="First slide">
+						      <img class="d-block w-100" src="<?php echo base_url().'public/images/imagen1_tienda.jpeg'?>" alt="First slide">
 						    </div>
 						    <div class="carousel-item">
-						      <img class="d-block w-100" src="<?php echo base_url().'public/images/prod-1.jpg'?>" alt="Second slide">
+						      <img class="d-block w-100" src="<?php echo base_url().'public/images/imagen2_tienda.jpeg'?>" alt="Second slide">
 						    </div>
 						    <div class="carousel-item">
-						      <img class="d-block w-100" src="<?php echo base_url().'public/images/prod-1.jpg'?>" alt="Third slide">
+						      <img class="d-block w-100" src="<?php echo base_url().'public/images/imagen3_tienda.jpeg'?>" alt="Third slide">
 						    </div>
 				  </div>
 				  <a class="carousel-control-prev" href="#slider_ropa" role="button" data-slide="prev">
@@ -25,7 +25,6 @@
 	</div>
 </div>
 <!--SLIDER DE ARRIBA-->
-
 
 <!--CARDS-->
 	<?php require_once 'includes_frontend/cards.php' ?>

@@ -50,15 +50,15 @@
 
               <div>
                     <?php
-                    $usuario = array(
-                        'class'        => form_error("usuario") != false ? "parsley-error form-control":"form-control ",
-                        'placeholder'  => 'Nombre de Usuario',
-                        'name'         => 'usuario',
-                        'value'        =>  set_value("usuario")
+                    $email_usuario = array(
+                        'class'        => form_error("email_usuario") != false ? "parsley-error form-control":"form-control ",
+                        'placeholder'  => 'Email del Usuario',
+                        'name'         => 'email_usuario',
+                        'value'        =>  set_value("email_usuario")
                     );
 
-                    echo form_input($usuario);
-                    echo form_error("usuario","<span class='pull-left label label-danger'>","</span>")
+                    echo form_input($email_usuario);
+                    echo form_error("email_usuario","<span class='pull-left label label-danger'>","</span>")
 
                   ?>
               </div>

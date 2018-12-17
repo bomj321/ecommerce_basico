@@ -14,15 +14,15 @@ class Login extends CI_Controller {
 
 			public function login()
 			{
-							$usuario    = $this->input->post("usuario");
+							$email_usuario    = $this->input->post("email_usuario");
 							$contraseña = $this->input->post("contraseña");
 
 
-					  	$this->form_validation->set_rules("usuario","Nombre del Usuario","required");
+					  	$this->form_validation->set_rules("email_usuario","Nombre del Usuario","required");
 							$this->form_validation->set_rules("contraseña","Contraseña","required");
 
 							if ($this->form_validation->run()) {
-										$res = $this->Usuarios_model->login($usuario, $contraseña);
+										$res = $this->Usuarios_model->login($email_usuario, $contraseña);
 
 										if (!$res) {
 											$this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");

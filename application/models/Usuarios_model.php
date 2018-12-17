@@ -5,7 +5,7 @@ class Usuarios_model extends CI_Model {
 
 	public function login($usuario, $contraseña)
 	{
-		$this->db->where("nombre_usuario", $usuario);
+		$this->db->where("email_usuario", $email_usuario);
 		$this->db->where("contrasena", sha1($contraseña));
 		$resultados = $this->db->get("usuarios");
   		if ($resultados->num_rows() > 0) {
@@ -24,10 +24,7 @@ class Usuarios_model extends CI_Model {
 		return $resultados->result();
 	}
 
-	public function add_user($data)
-	{
-	   return $this->db->insert("usuarios",$data);
-	}
+	
 
 	public function get_usuario($id_usuario)
 	{
@@ -41,5 +38,26 @@ class Usuarios_model extends CI_Model {
 		return $this->db->count_all('usuarios');
 	}
 
+/************SECCION  TIENDA********************/
+public function add_user($data)
+	{
+	   return $this->db->insert("usuarios",$data);
+	}
+
+public function login_tienda($email_usuario, $contraseña)
+	{
+	    $this->db->where("email_usuario", $email_usuario);
+		$this->db->where("contrasena", sha1($contraseña));
+		$resultados = $this->db->get("usuarios");
+  		if ($resultados->num_rows() > 0) {
+  			return $resultados->row();
+  		}
+  		else{
+  			return false;
+  		}
+	}
+
+
+/************SECCION  TIENDA********************/
 
 }

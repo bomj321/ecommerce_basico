@@ -8,63 +8,37 @@
 
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-<!--PRIMER DROPDOWN-->
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="ropa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Ropas
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="ropa">
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Action</a>
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Another action</a>                                 
-                                </div>
-                              </li>
-<!--PRIMER DROPDOWN-->
+                                   <?php
+                                    $tipo_ropas = $this->db->query("SELECT * FROM tipo_ropa WHERE estado = 1 AND id_tipo_ropa IN (SELECT tipo_ropa FROM ropa_tienda WHERE estado_ropa = 1) LIMIT 4;");
+                                   ?>
+                                   <?php foreach ($tipo_ropas->result() as $tipo_ropa): ?>
+                                           <li class="nav-item dropdown">
+                                             <a class="nav-link dropdown-toggle" href="#" id="ropa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                               <?php echo $tipo_ropa->nombre_tipo_ropa ?>
+                                             </a>
+                                             <div class="dropdown-menu" aria-labelledby="ropa">
+                                    <?php
+                                    $sub_tipo_ropas = $this->db->query("SELECT * FROM sub_tipo_ropa WHERE estado = 1 AND id_sub_tipo_ropa IN (SELECT sub_tipo_ropa FROM ropa_tienda WHERE estado_ropa = 1 AND $tipo_ropa->id_tipo_ropa = tipo_ropa);");
 
-<!--SEGUNDO DROPDOWN-->
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="zapatos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Zapatos
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="zapatos">
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Action</a>
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Another action</a>                                 
-                                </div>
-                              </li>
-
-<!--SEGUNDO DROPDOWN-->
-
-
-<!--TERCERO DROPDOWN-->
-
-
-
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="zandalias" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Zandalias
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="zandalias">
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Action</a>
-                                  <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Another action</a>                                 
-                                </div>
-                              </li>
-
-<!--TERCERO DROPDOWN-->
-
+                                     ?>
+                                       <?php foreach ($sub_tipo_ropas->result() as $sub_tipo_ropa): ?>
+                                               <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda"> <?php echo $sub_tipo_ropa->nombre_sub_tipo_ropa ?></a>
+                                      <?php endforeach; ?>
+                                             </div>
+                                           </li>
+                                   <?php endforeach; ?>
 <!--CUARTO DROPDOWN-->
-
-
-
                              <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url();?>tienda/tienda" role="button">
                                   Y m&aacute;s...
-                                </a>                                
+                                </a>
                               </li>
 
 <!--CUARTO DROPDOWN-->
                         </ul>
 
-   
-                        <?php if ($this->session->userdata("login_tienda")): ?>  
+
+                        <?php if ($this->session->userdata("login_tienda")): ?>
                             <ul class="navbar-nav mr-5">
                                 <li class="nav-item dropdown">
 
@@ -73,7 +47,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="opciones">
                                       <a class="dropdown-item" href="<?php echo base_url();?>tienda/tienda">Ver Carrito</a>
-                                      <a class="dropdown-item" href="<?php echo base_url();?>tienda/logout">Cerrar Sesi&oacute;n</a>                                 
+                                      <a class="dropdown-item" href="<?php echo base_url();?>tienda/logout">Cerrar Sesi&oacute;n</a>
                                     </div>
                                   </li>
                             </ul>
@@ -81,7 +55,7 @@
 
                            <a class="nav-link btn btn-verde mr-5" href="<?php echo base_url();?>tienda/inicio">Iniciar Sesi&oacute;n</a>
 
-                         <?php endif ?>   
+                         <?php endif ?>
 
 
 

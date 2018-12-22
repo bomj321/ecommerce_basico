@@ -8,7 +8,7 @@
 		</p>
 
 		<div class="collapse" id="collapse">
-		  <div class="card-body">	
+		  <div class="card-body">
 				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="" title="">apibus ac facilisis inD</a></li>
@@ -30,7 +30,7 @@
 		</p>
 
 		<div class="collapse" id="collapse2">
-		  <div class="card-body">	
+		  <div class="card-body">
 				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="">Dapibus ac facilisis in</a></li>
@@ -51,7 +51,7 @@
 		</p>
 
 		<div class="collapse" id="collapse3">
-		  <div class="card-body">	
+		  <div class="card-body">
 				<ul class="list-group li_sin_margen">
 					  <li class="list-group-item borderless"><a href="">Cras justo odio</a></li>
 					  <li class="list-group-item borderless"><a href="">Dapibus ac facilisis in</a></li>
@@ -92,7 +92,7 @@
 
 			</div>
 		</div>
-		
-		
+
+
 	</div>
 </div>

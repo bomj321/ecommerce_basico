@@ -8,6 +8,8 @@
 
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
+<!--FOR EACH DE LOS RESULTADOS MAS IMPORTANTES-->
+
                                    <?php
                                     $tipo_ropas = $this->db->query("SELECT * FROM tipo_ropa WHERE estado = 1 AND id_tipo_ropa IN (SELECT tipo_ropa FROM ropa_tienda WHERE estado_ropa = 1) LIMIT 4;");
                                    ?>
@@ -27,6 +29,9 @@
                                              </div>
                                            </li>
                                    <?php endforeach; ?>
+                                   
+<!--FOR EACH DE LOS RESULTADOS MAS IMPORTANTES-->
+
 <!--CUARTO DROPDOWN-->
                              <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url();?>tienda/tienda" role="button">

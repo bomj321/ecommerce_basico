@@ -41,7 +41,7 @@
     <!--CONTENIDO DE LA PAGINA-->
         <?php echo $content_for_layout; ?>
     <!--CONTENIDO DE LA PAGINA-->
-        
+
     <!--FOOTER DE LA PAGINA-->
     <?php include 'footer_tienda.php'; ?>
     <!--FOOTER DE LA PAGINA-->
@@ -49,15 +49,15 @@
 
     </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <!--SCRIPT DATATABLE-->
   <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
-<!--SCRIPT DATATABLE-->  
+  <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
+<!--SCRIPT DATATABLE-->
   <script src="<?php echo base_url();?>public/app_tienda.js"></script>
 
   </body>

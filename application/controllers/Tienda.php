@@ -12,7 +12,7 @@ class Tienda extends CI_Controller {
 		$this->layout_tienda->view("inicio");
 	}
 
-			
+
 /**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
 public function inicio(){
 			$this->layout_tienda->view("register/inicio_sesion");
@@ -36,7 +36,7 @@ public function registro_usuarios()
 			$dni_usuario          = $this->input->post("dni_usuario");
 			$email_usuario        = $this->input->post("email_usuario");
 			$contrasena           = $this->input->post("contrasena");
-			
+
 
 			$this->form_validation->set_rules("nombre_usuario","Nombre del Usuario","required");
 			$this->form_validation->set_rules("dni_usuario","Cedula del Usuario","required|is_unique[usuarios.dni_usuario]");
@@ -64,8 +64,8 @@ public function registro_usuarios()
 
 		}else {
 			$this->registrate();
-		}			
-}	
+		}
+}
 
 
 
@@ -102,7 +102,7 @@ public function login()
 			}
 }
 
-			
+
 /**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
 
 
@@ -111,6 +111,13 @@ public function login()
 public function tienda(){
 			$this->layout_tienda->view("tienda/articulos");
 
+}
+
+public function tienda_articulo($id_ropa, $id_subtipo)
+{
+	$this->load->view("tienda/tienda/respuesta_ajax_articulo");
+
+//	$this->layout->view("tienda/tienda/respuesta_ajax_articulo");
 }
 
 /**********************************************SECCION DE VER ROPA**********************************************/

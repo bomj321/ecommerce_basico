@@ -13,7 +13,7 @@
 
 body
 {
-    
+
 
 }
 
@@ -37,7 +37,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', end
 
 
 /*SLIDER*/
-.clases_slider .carousel-inner img 
+.clases_slider .carousel-inner img
 {
 	max-height: 450px;
 	margin-bottom: 200px;
@@ -160,7 +160,25 @@ hr
 
 
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
-.borderless { border: 0 none; }
+.borderless {
+	 border: 0 none;
+	 background: rgba(164,179,87,1);
+	 background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(216,225,231,1)));
+	 background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	 background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	 background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	 background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#d8e1e7', GradientType=1 );
+}
+
+.borderless a {	
+ cursor: pointer;
+}
+.borderless
+{
+	color: black;
+}
 
 .tienda_productos img{
   width: 100%;
@@ -171,11 +189,34 @@ hr
 {
   margin-bottom: -15px;
   border-radius: 0px;
+
+background: rgba(136,158,117,1);
+background: -moz-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,158,117,1)), color-stop(100%, rgba(31,59,8,1)));
+background: -webkit-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+background: -o-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+background: -ms-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+background: linear-gradient(to right, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', endColorstr='#1f3b08', GradientType=1 );
+
 }
 .li_sin_margen li
 {
   margin-bottom: -18px;
 }
+
+.cuerpo_tarjeta{
+	background: rgba(164,179,87,1);
+	background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(216,225,231,1)));
+	background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(216,225,231,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#d8e1e7', GradientType=1 );
+}
+
+
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 
 
@@ -198,15 +239,15 @@ hr
 /*CSS PARA LOS BOTONES*/
 .btn-verde
 {
-background: rgba(164,179,87,1);
-background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(117,137,12,1)));
-background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
-background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
-background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
-background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
-color: black;
+	background: rgba(164,179,87,1);
+	background: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(100%, rgba(117,137,12,1)));
+	background: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+	background: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+	background: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+	background: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
+	color: black;
 }
 
 /*CSS PARA LOS BOTONES*/

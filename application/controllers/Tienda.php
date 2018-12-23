@@ -34,7 +34,7 @@ public function logout()
 
 public function registro_usuarios()
 {
-	        $nombre_usuario       = $this->input->post("nombre_usuario");
+	    $nombre_usuario       = $this->input->post("nombre_usuario");
 			$dni_usuario          = $this->input->post("dni_usuario");
 			$email_usuario        = $this->input->post("email_usuario");
 			$contrasena           = $this->input->post("contrasena");
@@ -110,8 +110,11 @@ public function login()
 
 
 /**********************************************SECCION DE VER ROPA**********************************************/
-public function tienda(){
-			$this->layout_tienda->view("tienda/articulos");
+public function tienda($id_tipo_topa){
+			$data = array(
+				'id_tipo_topa_url' => $id_tipo_topa ,
+			);
+			$this->layout_tienda->view("tienda/articulos",$data);
 
 }
 
@@ -124,13 +127,18 @@ public function tienda_articulo($id_ropa, $id_subtipo)
 
 }
 
-/**********************************************SECCION DE VER ROPA**********************************************/
 public function carrito(){
-			$data = array(
-				'cantidad_articulos' => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
-				'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
-			);
-			$this->layout_tienda->view("tienda/carrito",$data);
+
+	if ($this->session->userdata("login_tienda")) {
+				$data = array(
+					'cantidad_articulos' => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
+					'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
+				);
+				$this->layout_tienda->view("tienda/carrito",$data);
+	}else{
+				redirect(base_url().'tienda/inicio');
+	}
+
 
 }
 
@@ -145,8 +153,21 @@ public function add_carrito($id_usuario, $id_ropa_tienda,$precio_ropa){
 
 }
 
-/**********************************************SECCION DE COMPRA**********************************************/
+/**********************************************SECCION DE VER ROPA**********************************************/
 
+/**********************************************SECCION DE COMPRA**********************************************/
+public function update_carrito_prenda($id_ropa_tienda,$cantidad_articulo){
+		$data = array(
+			'cantidad_articulo' => $cantidad_articulo
+		);
+		 $this->Tienda_model->update_carrito_prenda($id_ropa_tienda,$data);
+
+}
+
+public function delete_carrito_prenda($id_ropa_tienda){
+		 $this->Tienda_model->delete_carrito_prenda($id_ropa_tienda);
+
+}
 
 
 /**********************************************SECCION DE COMPRA**********************************************/

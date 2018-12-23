@@ -24,10 +24,12 @@ class Tienda_model extends CI_Model {
 
   }
 
+
+/*SECCION DEL CARRITO DE COMPRA*/
   public function select_carrito($id_usuario)
   {
 
-    $this->db->select('cr.*,usuarios.nombre_usuario as nombre_usuario,ropa_tienda.titulo_ropa as titulo_ropa');
+    $this->db->select('cr.*,usuarios.nombre_usuario as nombre_usuario,ropa_tienda.titulo_ropa as titulo_ropa,ropa_tienda.cantidad_ropa as cantidad_ropa');
     $this->db->from('carrito_compra cr');
     $this->db->join('usuarios usuarios', 'cr.id_usuario = usuarios.id_usuario');
     $this->db->join('ropa_tienda ropa_tienda', 'cr.id_articulo = ropa_tienda.id_ropa_tienda');
@@ -44,6 +46,22 @@ class Tienda_model extends CI_Model {
         $resultado = $this->db->get();
         return $resultado->row();
   }
+
+  public function update_carrito_prenda($id_ropa_tienda,$data)
+  {
+    $this->db->where("id_carrito_compra",$id_ropa_tienda);
+    return $this->db->update("carrito_compra",$data);
+  }
+
+  public function delete_carrito_prenda($id_ropa_tienda)
+  {
+    $this->db->where('id_carrito_compra', $id_ropa_tienda);
+    $this->db->delete('carrito_compra');
+  }
+
+
+/*SECCION DEL CARRITO DE COMPRA*/
+
 
 
 

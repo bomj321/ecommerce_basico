@@ -30,7 +30,10 @@ $( document ).ready(function() {
 			});
 
  });
+ /*JS PARA LAS TABLAS DE LA TIENDA*/
 
+
+/********JS PARA LA SECCION DE ARTICULOS*****/
 
 function articulos_tienda($id_ropa,$id_subtipo){
 		var id_ropa    = $id_ropa;
@@ -77,5 +80,67 @@ function agregar_carrito($id_usuario,$id_ropa_tienda,$precio_ropa){
 
 }
 
+/********JS PARA LA SECCION DE ARTICULOS*****/
 
-/*JS PARA LAS TABLAS DE LA TIENDA*/
+/**********JS PARA LA SECCIO DEL CARRITO***********/
+function actualizar_carrito($id_ropa_tienda)
+{
+
+  var id_ropa_tienda           = $id_ropa_tienda;
+  var id_elemento              = 'carrito_cantidad_'+id_ropa_tienda;
+	var cantidad_existente_input = 'carrito_cantidad_existente_'+id_ropa_tienda;
+	var cantidad_articulo        = document.getElementById(id_elemento).value;
+	var cantidad_existente       = document.getElementById(cantidad_existente_input).value;
+
+	if (parseInt(cantidad_articulo) > parseInt(cantidad_existente) ) {
+		toastr.error('No tenemos tantos productos en existencia', 'Disculpenos!');
+		return false;
+	}
+
+				$.ajax({
+						url: base_url + "tienda/update_carrito_prenda/" + id_ropa_tienda + "/" + cantidad_articulo,
+						type:"POST",
+						 beforeSend: function() {
+										 toastr.warning('Actualizando');
+										 toastr.clear()
+									},
+						success:function(resp){
+										toastr.success('El producto ha sido Actualizado', 'Producto Actualizado');
+										setTimeout(function(){
+												location.reload();
+										  }, 1000);
+						},
+						error:function(){
+										toastr.error('Ha ocurrido un error, intente más tarde.', 'Disculpenos!')
+
+						}
+
+				});
+}
+
+function eliminar_carrito($id_ropa_tienda)
+{
+  var id_ropa_tienda           = $id_ropa_tienda;
+				$.ajax({
+						url: base_url + "tienda/delete_carrito_prenda/" + id_ropa_tienda,
+						type:"POST",
+						 beforeSend: function() {
+										 toastr.warning('Borrando...');
+										 toastr.clear()
+									},
+						success:function(resp){
+										toastr.success('El producto ha sido Eliminado', 'Producto Eliminado');
+										setTimeout(function(){
+												location.reload();
+										  }, 1000);
+						},
+						error:function(){
+										toastr.error('Ha ocurrido un error, intente más tarde.', 'Disculpenos!')
+
+						}
+
+				});
+}
+
+
+/**********JS PARA LA SECCIO DEL CARRITO***********/

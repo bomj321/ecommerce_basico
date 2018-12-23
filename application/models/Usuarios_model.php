@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios_model extends CI_Model {
 
-	public function login($usuario, $contraseña)
+	public function login($email_usuario, $contraseña)
 	{
 		$this->db->where("email_usuario", $email_usuario);
 		$this->db->where("contrasena", sha1($contraseña));
@@ -24,7 +24,7 @@ class Usuarios_model extends CI_Model {
 		return $resultados->result();
 	}
 
-	
+
 
 	public function get_usuario($id_usuario)
 	{

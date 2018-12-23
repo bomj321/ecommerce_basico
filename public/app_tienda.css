@@ -220,6 +220,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', end
 	color: black;
 }
 
+.carrusel_controles_tienda
+{
+	background: rgba(0,0,0, 0.2) /* Green background with 30% opacity */
+}
+
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 
 

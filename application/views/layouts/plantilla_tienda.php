@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css"/>
 
-    <!--CSS DATATABLE-->
+    <!--CSS DATATABLE Y ALERTAS TOASTR-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link href="<?php echo base_url();?>public/app_tienda.css" rel="stylesheet">
 
     <title>ecommerce,ropa,zapatos,camisas</title>
@@ -58,7 +59,10 @@
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
 <!--SCRIPT DATATABLE-->
-  <script src="<?php echo base_url();?>public/app_tienda.js"></script>
 
+<!--SCRIPT PERSONALES Y DE TOASTR-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="<?php echo base_url();?>public/app_tienda.js"></script>
+<!--SCRIPT PERSONALES Y DE TOASTR-->
   </body>
 </html>

@@ -53,5 +53,29 @@ function articulos_tienda($id_ropa,$id_subtipo){
 					});
 }
 
+function agregar_carrito($id_usuario,$id_ropa_tienda,$precio_ropa){
+
+	var id_usuario     = $id_usuario;
+	var id_ropa_tienda = $id_ropa_tienda;
+	var precio_ropa    = $precio_ropa;
+				$.ajax({
+						url: base_url + "tienda/add_carrito/" + id_usuario + "/" + id_ropa_tienda + "/" + precio_ropa,
+						type:"POST",
+						 beforeSend: function() {
+										 toastr.warning('Agregando al Carrito');
+										 toastr.clear()
+									},
+						success:function(resp){
+										toastr.success('El producto ha sido agregado al Carrito', 'Producto Agregado');
+						},
+						error:function(){
+										toastr.error('Ha ocurrido un error, intente más tarde.', 'Disculpenos!')
+
+						}
+
+				});
+
+}
+
 
 /*JS PARA LAS TABLAS DE LA TIENDA*/

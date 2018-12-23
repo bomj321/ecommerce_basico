@@ -77,7 +77,7 @@ public function login()
 				$contrasena       = $this->input->post("contrasena");
 
 
-		     	$this->form_validation->set_rules("email_usuario","Email del Usuario","required|valid_email");
+		    $this->form_validation->set_rules("email_usuario","Email del Usuario","required|valid_email");
 				$this->form_validation->set_rules("contrasena","Contraseña","required");
 
 				if ($this->form_validation->run()) {
@@ -126,14 +126,24 @@ public function tienda_articulo($id_ropa, $id_subtipo)
 
 /**********************************************SECCION DE VER ROPA**********************************************/
 public function carrito(){
-			$this->layout_tienda->view("tienda/carrito");
+			$data = array(
+				'cantidad_articulos' => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
+				'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
+			);
+			$this->layout_tienda->view("tienda/carrito",$data);
 
 }
 
-/*public function add_carrito(){
-			$this->layout_tienda->view("tienda/articulos");
+public function add_carrito($id_usuario, $id_ropa_tienda,$precio_ropa){
+		$data = array(
+			'id_usuario'        => $id_usuario,
+			'id_articulo'       => $id_ropa_tienda,
+			'precio_articulo'   => $precio_ropa,
+			'cantidad_articulo' => '1',
+		);
+		 $this->Tienda_model->add_carrito($data);
 
-}*/
+}
 
 /**********************************************SECCION DE COMPRA**********************************************/
 

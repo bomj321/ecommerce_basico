@@ -5,6 +5,8 @@ class Tienda extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Usuarios_model");
+		$this->load->model("Tienda_model");
+
 	}
 
 	public function index()
@@ -115,9 +117,11 @@ public function tienda(){
 
 public function tienda_articulo($id_ropa, $id_subtipo)
 {
-	$this->load->view("tienda/tienda/respuesta_ajax_articulo");
+	$data = array(
+			'articulos'       => $this->Tienda_model->get_ropa($id_ropa, $id_subtipo)
+	);
+	$this->load->view("tienda/tienda/respuesta_ajax_articulo",$data);
 
-//	$this->layout->view("tienda/tienda/respuesta_ajax_articulo");
 }
 
 /**********************************************SECCION DE VER ROPA**********************************************/

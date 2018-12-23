@@ -172,7 +172,7 @@ hr
 	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#d8e1e7', GradientType=1 );
 }
 
-.borderless a {	
+.borderless a {
  cursor: pointer;
 }
 .borderless
@@ -216,6 +216,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', end
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#d8e1e7', GradientType=1 );
 }
 
+.letras_slider_articulo{
+	color: black;
+}
 
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 

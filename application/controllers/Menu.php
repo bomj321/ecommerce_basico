@@ -34,24 +34,37 @@ public function view_add()
 
 public function create_menu()
 {
-        $menu_tipo    = $this->input->post("menu");
+        $menu_tipo                = $this->input->post("menu");
         $this->form_validation->set_rules("menu","Nombre Menu","required|is_unique[tipo_ropa.nombre_tipo_ropa]");
 
-        if ($this->form_validation->run()) {
-                  $data = [
-                      'nombre_tipo_ropa' => $menu_tipo
-                  ];
+				if ($this->form_validation->run()) {
+									$this->load->library("upload");
+									$config['upload_path']          =  './public/images_ropa';
+									$config['allowed_types']        =  'gif|jpg|png|jpeg';
+									$config['max_size']             =  0;
+									$config['max_width']            =  0;
+									$config['max_height']           =  0;
 
-                 if ($this->Menus_model->add($data)) {
-                     redirect(base_url()."menu/menu");
-                 }else{
-                    $this->session->set_flashdata("error","No se pudo guardar la información");
-                    $this->view_add();
-                 }
+									$this->upload->initialize($config);
+									$this->load->library('upload', $config);
+									$this->upload->do_upload('imagen_tipo_ropa');
+									$imagen = array("upload_data" => $this->upload->data());
 
-        }else {
-              $this->view_add();
-        }
+											$data = array
+											(
+												'nombre_tipo_ropa'            => $menu_tipo,
+												'imagen_tipo_ropa'            => $imagen['upload_data']['file_name']
+											);
+											if ($this->Menus_model->add($data)) {
+												 redirect(base_url()."menu/menu");
+											}else{
+												$this->session->set_flashdata("error","No se pudo guardar la información");
+												$this->view_add();
+											}
+			}else{
+				$this->view_add();
+
+			}
 
 }
 
@@ -81,20 +94,58 @@ public function edit_menu()
 
 
           if ($this->form_validation->run()) {
-                    $data = [
-                        'nombre_tipo_ropa' => $menu_tipo
-                    ];
+						if (!empty($_FILES['imagen_tipo_ropa']["name"])) {/*IF DE LAS FOTOS*/
+												$this->load->library("upload");
+												$config['upload_path']          =  './public/images_ropa';
+												$config['allowed_types']        =  'gif|jpg|png|jpeg';
+												$config['max_size']             =  0;
+												$config['max_width']            =  0;
+												$config['max_height']           =  0;
 
-                   if ($this->Menus_model->update($data,$id_menu)) {
-                       redirect(base_url()."menu/menu");
-                   }else{
-                      $this->session->set_flashdata("error","No se pudo guardar la información");
-                      $this->edit_view($id_menu);
-                   }
+												$this->upload->initialize($config);
+												$this->load->library('upload', $config);
+												$this->upload->do_upload('imagen_tipo_ropa');
+												$imagen = array("upload_data" => $this->upload->data());
+
+		                    $data = [
+													'nombre_tipo_ropa'            => $menu_tipo,
+													'imagen_tipo_ropa'            => $imagen['upload_data']['file_name']
+		                    ];
+
+			                   if ($this->Menus_model->update($data,$id_menu)) {
+			                       redirect(base_url()."menu/menu");
+			                   }else{
+			                      $this->session->set_flashdata("error","No se pudo guardar la información");
+			                      $this->edit_view($id_menu);
+			                   }
+
+/*IF DE LAS FOTOS*/	}else{
+												$data = [
+														'nombre_tipo_ropa' => $menu_tipo
+												];
+
+											 if ($this->Menus_model->update($data,$id_menu)) {
+													 redirect(base_url()."menu/menu");
+											 }else{
+													$this->session->set_flashdata("error","No se pudo guardar la información");
+													$this->edit_view($id_menu);
+											 }
+						}/*IF DE LAS FOTOS*/
 
           }else {
                 $this->edit_view($id_menu);
           }
+}
+
+
+
+public function update_estado($id_menu,$id_estado)
+{
+		$data = array(
+			'estado_importante' => $id_estado,
+		);
+		$this->Menus_model->update_estado($data,$id_menu);
+		 redirect(base_url()."menu/menu");
 }
 
 

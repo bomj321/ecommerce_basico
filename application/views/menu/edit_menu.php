@@ -34,7 +34,7 @@
 
 							<?php
 							 $formulario = array('class' => 'form-horizontal');
-							 echo form_open('menu/edit_menu',$formulario);
+							 echo form_open_multipart('menu/edit_menu',$formulario);
 							 ?>
 
                <input type="hidden" name="id_menu" value="<?php echo $editar_menu->id_tipo_ropa ?>">
@@ -48,6 +48,14 @@
                    ?>
 
 								</div>
+
+								<div class="form-group">
+												<label for="imagen_tipo_ropa">Imagen de Referencia</label>
+												<input required type="file" class="form-control" id="imagen_tipo_ropa" name="imagen_tipo_ropa">
+												<?php
+															 echo form_error("imagen_tipo_ropa","<span style='margin-top:10px;' class='pull-left label label-danger'>","</span>")
+												 ?>
+							 </div>
 
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<center><button class="btn btn-primary" type="submit" id="button">Editar Menu</button></center>

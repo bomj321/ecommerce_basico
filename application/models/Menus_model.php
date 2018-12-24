@@ -29,4 +29,10 @@ class Menus_model extends CI_Model {
     return $this->db->update('tipo_ropa', $data);
 	}
 
+	public function update_estado($data,$id_menu)
+	{
+    $this->db->where('id_tipo_ropa', $id_menu);
+    return $this->db->update('tipo_ropa', $data);
+	}
+
 }

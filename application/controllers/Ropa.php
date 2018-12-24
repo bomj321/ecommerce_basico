@@ -70,7 +70,6 @@ class Ropa extends CI_Controller {
 								$this->upload->do_upload('imagen_ropa');
 								$data = array("upload_data" => $this->upload->data());
 
-
 										$data = array
 										(
 											'titulo_ropa'            => $titulo_ropa,

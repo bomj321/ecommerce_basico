@@ -11,7 +11,7 @@
 <!--FOR EACH DE LOS RESULTADOS MAS IMPORTANTES-->
 
                                    <?php
-                                    $tipo_ropas = $this->db->query("SELECT * FROM tipo_ropa WHERE estado = 1 AND id_tipo_ropa IN (SELECT tipo_ropa FROM ropa_tienda WHERE estado_ropa = 1) LIMIT 4;");
+                                    $tipo_ropas = $this->db->query("SELECT * FROM tipo_ropa WHERE estado = 1 AND id_tipo_ropa IN (SELECT tipo_ropa FROM ropa_tienda WHERE estado_ropa = 1) AND estado_importante = 1 LIMIT 4;");
                                    ?>
                                    <?php foreach ($tipo_ropas->result() as $tipo_ropa): ?>
                                            <li class="nav-item">

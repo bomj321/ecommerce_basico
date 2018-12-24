@@ -34,11 +34,11 @@
 
 							<?php
 							 $formulario = array('class' => 'form-horizontal');
-							 echo form_open('menu/create_menu',$formulario);
+							 echo form_open_multipart('menu/create_menu',$formulario);
 							 ?>
 
 
-								<div class="form-group" style="margin-bottom: 50px;">
+								<div class="form-group">
                   <label for="menu">Menu</label>
                   <input type="menu" class="form-control" id="menu" placeholder="Nuevo Menu" name="menu">
                   <?php
@@ -46,6 +46,14 @@
                    ?>
 
 								</div>
+
+								<div class="form-group">
+												<label for="imagen_tipo_ropa">Imagen de Referencia</label>
+												<input required type="file" class="form-control" id="imagen_tipo_ropa" name="imagen_tipo_ropa">
+												<?php
+															 echo form_error("imagen_tipo_ropa","<span style='margin-top:10px;' class='pull-left label label-danger'>","</span>")
+												 ?>
+							 </div>
 
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<center><button class="btn btn-primary" type="submit" id="button">Guarda el nuevo Menu</button></center>

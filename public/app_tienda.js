@@ -144,3 +144,13 @@ function eliminar_carrito($id_ropa_tienda)
 
 
 /**********JS PARA LA SECCIO DEL CARRITO***********/
+
+
+/*SECCION PAGO REALIZADO*/
+function captura_pantalla()
+{
+		html2canvas(document.getElementById("captura_pantalla")).then(canvas => {
+    document.body.appendChild(canvas)
+});
+}
+/*SECCION PAGO REALIZADO*/

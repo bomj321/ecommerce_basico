@@ -62,6 +62,7 @@
 
 <!--SCRIPT PERSONALES Y DE TOASTR-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="<?php echo base_url();?>public/app_tienda.js"></script>
 <!--SCRIPT PERSONALES Y DE TOASTR-->
   </body>

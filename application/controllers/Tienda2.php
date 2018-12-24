@@ -23,7 +23,6 @@ class Tienda extends CI_Controller {
 		$this->layout_tienda->view("inicio");
 	}
 
-	
 
 /**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
 public function inicio(){
@@ -185,31 +184,37 @@ public function pagar_paypal(){
 					$costo_total             = $this->input->post("costo_total");
 					$id_persona              = $this->input->post("id_persona");
 				  $cantidad_articulos      =  htmlspecialchars($this->input->post("cantidad_articulos"));
-/*SECCION DE BASE DE DATOS PERO SE DESACTIVO PORQUE NO SE PUDO PARSEAR DATA*/
-				/*	$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
-					$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));*/
-/*SECCION DE BASE DE DATOS PERO SE DESACTIVO PORQUE NO SE PUDO PARSEAR DATA*/
+/*SECCION DE BASE DE DATOS*/
+					$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
+					$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));
+/*SECCION DE BASE DE DATOS*/
 					require_once ('./public/paypal/config.php');
-					$producto = htmlspecialchars($nombre_articulo);
-					$precio   = $costo_total;
+					//$producto = htmlspecialchars($nombre_articulo);
+					$precio   = $suma_compra->suma_compra;
 					$envio    = 0;
 					$total    = $precio + $envio;
 
 
 					$compra = new Payer();
 					$compra->setPaymentMethod('paypal');
+$i=0;
+$arreglo_pedido = array();
+/*SE PUEDE HACER UN FOREACH*/
+foreach ($articulos_comprar as $articulo_comprar) {
+					${"articulo$i"} = new Item();
+					$arreglo_pedido[] = ${"articulo$i"};
+					${"articulo$i"}->setName($articulo_comprar->titulo_ropa)
+								->setCurrency('EUR')
+								->setQuantity($articulo_comprar->cantidad_articulo)
+								->setPrice($articulo_comprar->cantidad_articulo * $articulo_comprar->precio_articulo);
 
-
-					$articulo = new Item();
-					$articulo->setName($producto)
-					      ->setCurrency('EUR')
-					      ->setQuantity(1)
-					      ->setPrice($total);
+$i++;
+}
 
 /*SE PUEDE HACER UN FOREACH*/
 
 					$listaArticulos = new ItemList();
-					$listaArticulos->setItems(array($articulo));
+					$listaArticulos->setItems($arreglo_pedido);
 
 
 					$detalles = new Details();
@@ -229,9 +234,22 @@ public function pagar_paypal(){
 					               ->setDescription('Pago')
 					               ->setInvoiceNumber($id_persona);
 
+	/*	echo "<pre>";
+		var_dump($articulo0->getPrice());
+		var_dump($articulo1->getPrice());
+		$suma0 = $articulo0->getPrice()+$articulo1->getPrice();
+		var_dump($suma0);
+	 	var_dump($precio);
+	 	var_dump($total);
+
+
+	 	echo "</pre>";
+
+	 		die();*/
+
 					$redireccionar = new RedirectUrls();
-					$redireccionar->setReturnUrl(base_url() . "tienda/pago_realizado/true")
-					              ->setCancelUrl(base_url() . "tienda/pago_realizado/false");
+					$redireccionar->setReturnUrl(base_url() . "/tienda/pago_realizado/true")
+					              ->setCancelUrl(base_url() . "/tienda/pago_realizado/false");
 
 
 					$pago = new Payment();
@@ -262,18 +280,11 @@ public function pagar_paypal(){
 
 public function pago_realizado($estado_pago){
 
-		$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
-		$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));
-
 	if ($estado_pago == 'true') {
 			$data = array(
-				'estado_pago'       => $estado_pago,
-				'articulos_comprar' => $articulos_comprar,
-				'suma_compra'       => $suma_compra
+				'estado_pago' => $estado_pago,
 			);
 			$this->layout_tienda->view("tienda/pago_realizado",$data);
-	}else{
-			redirect(base_url().'tienda/carrito');
 	}
 }
 

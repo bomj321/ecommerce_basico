@@ -2,7 +2,13 @@
 <div class="row boton_comprar">
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-							<a  href="" class="btn btn-primary btn-block">COMPRAR POR PAYPAL</a>
+				<?php
+					 $formulario = array('class' => 'form-horizontal');
+					 echo form_open('tienda/pagar_paypal',$formulario);
+				 ?>
+						<input type="hidden" name="costo_total" value="<?php echo $suma_compra->suma_compra ?>">
+						<button type="submit" class="btn btn-primary btn-block" name="button">COMPRAR POR PAYPAL</button>
+				<?php echo form_close(); ?>
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">

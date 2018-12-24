@@ -11,6 +11,8 @@ class Tienda extends CI_Controller {
 
 	public function index()
 	{
+
+	//	include ('./public/paypal/config.php');
 		$this->layout_tienda->view("inicio");
 	}
 
@@ -167,6 +169,10 @@ public function update_carrito_prenda($id_ropa_tienda,$cantidad_articulo){
 public function delete_carrito_prenda($id_ropa_tienda){
 		 $this->Tienda_model->delete_carrito_prenda($id_ropa_tienda);
 
+}
+
+public function pagar_paypal(){
+	
 }
 
 

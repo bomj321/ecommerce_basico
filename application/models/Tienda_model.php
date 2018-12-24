@@ -39,6 +39,20 @@ class Tienda_model extends CI_Model {
 
   }
 
+
+  public function cantidad_carrito($id_usuario)
+  {
+
+    $this->db->select('cr.*,usuarios.nombre_usuario as nombre_usuario,ropa_tienda.titulo_ropa as titulo_ropa,ropa_tienda.cantidad_ropa as cantidad_ropa');
+    $this->db->from('carrito_compra cr');
+    $this->db->join('usuarios usuarios', 'cr.id_usuario = usuarios.id_usuario');
+    $this->db->join('ropa_tienda ropa_tienda', 'cr.id_articulo = ropa_tienda.id_ropa_tienda');
+    $this->db->where('cr.id_usuario',$id_usuario);
+    $resultado = $this->db->get();
+    return $resultado->num_rows();
+
+  }
+
   public function suma_carrito($id_usuario)
   {
         $this->db->select('sum(cr.precio_articulo * cr.cantidad_articulo) as suma_compra');

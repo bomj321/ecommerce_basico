@@ -96,13 +96,9 @@
 
               <div class="clearfix"></div>
 
-              <div class="separator">
-                  <p class="change_link">Nuevo en el Sitio?
-                    <a href="<?php echo base_url(); ?>auth/register" class="to_register"> Crea una Cuenta </a>
-                  </p>
+              <div class="separator">              
 
                   <div class="clearfix"></div>
-                  <br />
 
 
                   <div >

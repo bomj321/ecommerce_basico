@@ -6,7 +6,10 @@
 					 $formulario = array('class' => 'form-horizontal');
 					 echo form_open('tienda/pagar_paypal',$formulario);
 				 ?>
-						<input type="hidden" name="costo_total" value="<?php echo $suma_compra->suma_compra ?>">
+				    <input required type="hidden" name="nombre_articulo" value="Prendas de Moda, en la Tienda LondonEye">
+						<input required type="hidden" name="id_persona" value="<?php echo $this->session->userdata("id_usuario_tienda") ?>">
+						<input required type="hidden" name="costo_total" value="<?php echo $suma_compra->suma_compra ?>">
+						<input required type="hidden" name="cantidad_articulos" value="<?php echo $numero_articulos ?>">
 						<button type="submit" class="btn btn-primary btn-block" name="button">COMPRAR POR PAYPAL</button>
 				<?php echo form_close(); ?>
 			</div>

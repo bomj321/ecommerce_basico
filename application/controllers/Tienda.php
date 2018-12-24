@@ -1,5 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\RedirectUrls;
+use PayPal\Api\Transaction;
 
 class Tienda extends CI_Controller {
 	public function __construct(){
@@ -12,7 +20,6 @@ class Tienda extends CI_Controller {
 	public function index()
 	{
 
-	//	include ('./public/paypal/config.php');
 		$this->layout_tienda->view("inicio");
 	}
 
@@ -133,7 +140,8 @@ public function carrito(){
 
 	if ($this->session->userdata("login_tienda")) {
 				$data = array(
-					'cantidad_articulos' => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
+					'cantidad_articulos'  => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
+					'numero_articulos'    => $this->Tienda_model->cantidad_carrito($this->session->userdata("id_usuario_tienda")),
 					'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
 				);
 				$this->layout_tienda->view("tienda/carrito",$data);
@@ -172,7 +180,97 @@ public function delete_carrito_prenda($id_ropa_tienda){
 }
 
 public function pagar_paypal(){
-	
+			if ($this->session->userdata("login_tienda")) {
+					$nombre_articulo         = $this->input->post("nombre_articulo");
+					$costo_total             = $this->input->post("costo_total");
+					$id_persona              = $this->input->post("id_persona");
+				  $cantidad_articulos      =  htmlspecialchars($this->input->post("cantidad_articulos"));
+
+					require_once ('./public/paypal/config.php');
+					$producto = htmlspecialchars($nombre_articulo);
+					$precio   = (float) $costo_total;
+					$envio    = 0;
+					$total    = (float) $precio + $envio;
+
+/*var_dump($precio);
+var_dump($total);
+die();*/
+					$compra = new Payer();
+					$compra->setPaymentMethod('paypal');
+
+/*SE PUEDE HACER UN FOREACH*/
+					$articulo = new Item();
+					$articulo->setName($producto)
+					      ->setCurrency('EUR')
+					      ->setQuantity(1)
+					      ->setPrice($precio);
+
+/*SE PUEDE HACER UN FOREACH*/
+
+					$listaArticulos = new ItemList();
+					$listaArticulos->setItems(array($articulo));
+
+					$detalles = new Details();
+					$detalles->setShipping($envio)
+					          ->setSubtotal($precio);
+
+
+					$cantidad = new Amount();
+					$cantidad->setCurrency('EUR')
+					          ->setTotal($total)
+					          ->setDetails($detalles);
+
+					$transaccion = new Transaction();
+					$transaccion->setAmount($cantidad)
+					               ->setItemList($listaArticulos)
+					               ->setDescription('Pago')
+					               ->setInvoiceNumber($id_persona);
+
+
+					$redireccionar = new RedirectUrls();
+					$redireccionar->setReturnUrl(base_url() . "/tienda/pago_realizado/true")
+					              ->setCancelUrl(base_url() . "/tienda/carrito");
+
+
+					$pago = new Payment();
+					$pago->setIntent("sale")
+					     ->setPayer($compra)
+					     ->setRedirectUrls($redireccionar)
+					     ->setTransactions(array($transaccion));
+
+					     try {
+					       $pago->create($apiContext);
+					     } catch (PayPal\Exception\PayPalConnectionException $pce) {
+					       // Don't spit out errors or use "exit" like this in production code
+					       echo '<pre>';print_r(json_decode($pce->getData()));
+								 exit;
+								 echo "</pre>";
+					   }
+
+					$aprobado = $pago->getApprovalLink();
+
+
+					header("Location: {$aprobado}");
+
+					/*	$data = array(
+							'cantidad_articulos'  => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
+							'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
+						);
+						$this->layout_tienda->view("tienda/carrito",$data);*/
+			}else{
+						redirect(base_url().'tienda/inicio');
+			}
+
+}
+
+
+public function pago_realizado($estado_pago){
+	if ($estado_pago == 'true') {
+			$data = array(
+				'estado_pago' => $estado_pago,
+			);
+			$this->layout_tienda->view("tienda/pago_realizado",$data);
+	}
 }
 
 

@@ -181,39 +181,58 @@ public function delete_carrito_prenda($id_ropa_tienda){
 
 public function pagar_paypal(){
 			if ($this->session->userdata("login_tienda")) {
-					$nombre_articulo         = $this->input->post("nombre_articulo");
 					$costo_total             = $this->input->post("costo_total");
 					$id_persona              = $this->input->post("id_persona");
 				  $cantidad_articulos      =  htmlspecialchars($this->input->post("cantidad_articulos"));
-
+/*SECCION DE BASE DE DATOS*/
+					$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
+/*SECCION DE BASE DE DATOS*/
 					require_once ('./public/paypal/config.php');
 					$producto = htmlspecialchars($nombre_articulo);
 					$precio   = (float) $costo_total;
-					$envio    = 0;
+					$envio    = 100;
 					$total    = (float) $precio + $envio;
 
-/*var_dump($precio);
-var_dump($total);
-die();*/
+
 					$compra = new Payer();
 					$compra->setPaymentMethod('paypal');
-
+$i=0;
+$arreglo_pedido = array();
 /*SE PUEDE HACER UN FOREACH*/
-					$articulo = new Item();
-					$articulo->setName($producto)
-					      ->setCurrency('EUR')
-					      ->setQuantity(1)
-					      ->setPrice($precio);
+foreach ($articulos_comprar as $articulo_comprar) {
+					${"articulo$i"} = new Item();
+					$arreglo_pedido[] = ${"articulo$i"};
+					${"articulo$i"}->setName($articulo_comprar->titulo_ropa)
+								->setCurrency('EUR')
+								->setQuantity($articulo_comprar->cantidad_articulo)
+								->setPrice((float) $articulo_comprar->cantidad_articulo * (float) $articulo_comprar->precio_articulo);
+$i++;
+}
+
+/*var_dump($articulo0->getQuantity());
+
+die();*/
+
+
 
 /*SE PUEDE HACER UN FOREACH*/
 
 					$listaArticulos = new ItemList();
-					$listaArticulos->setItems(array($articulo));
+					$listaArticulos->setItems($arreglo_pedido);
+
 
 					$detalles = new Details();
 					$detalles->setShipping($envio)
 					          ->setSubtotal($precio);
 
+	/*echo "<pre>";
+	var_dump($precio);
+	var_dump($total);
+
+
+	echo "</pre>";
+
+		die();*/
 
 					$cantidad = new Amount();
 					$cantidad->setCurrency('EUR')
@@ -229,7 +248,7 @@ die();*/
 
 					$redireccionar = new RedirectUrls();
 					$redireccionar->setReturnUrl(base_url() . "/tienda/pago_realizado/true")
-					              ->setCancelUrl(base_url() . "/tienda/carrito");
+					              ->setCancelUrl(base_url() . "/tienda/pago_realizado/false");
 
 
 					$pago = new Payment();
@@ -250,13 +269,7 @@ die();*/
 					$aprobado = $pago->getApprovalLink();
 
 
-					header("Location: {$aprobado}");
-
-					/*	$data = array(
-							'cantidad_articulos'  => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
-							'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
-						);
-						$this->layout_tienda->view("tienda/carrito",$data);*/
+					header("Location: {$aprobado}");			
 			}else{
 						redirect(base_url().'tienda/inicio');
 			}
@@ -265,6 +278,7 @@ die();*/
 
 
 public function pago_realizado($estado_pago){
+
 	if ($estado_pago == 'true') {
 			$data = array(
 				'estado_pago' => $estado_pago,

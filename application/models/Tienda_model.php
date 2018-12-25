@@ -13,6 +13,7 @@ class Tienda_model extends CI_Model {
 		$this->db->where('rt.tipo_ropa',$id_ropa);
     $this->db->where('rt.sub_tipo_ropa',$id_subtipo);
 		$this->db->where('rt.estado_ropa','1');
+    $this->db->where('rt.cantidad_ropa >','0');
 		$resultado = $this->db->get();
     return $resultado->result();
 

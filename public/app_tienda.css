@@ -31,6 +31,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', end
 }
 
 
+/*CODIDO DEL FOOTER PARA QUE QUEDE SIEMPRE ABAJO*/
+
+footer { 
+  margin-top: 100px;
+  bottom: 0;  
+  width: 100%;
+}
+/*CODIDO DEL FOOTER PARA QUE QUEDE SIEMPRE ABAJO*/
+
+
+
 /*NAVBAR*/
 
 

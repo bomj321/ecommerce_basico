@@ -88,7 +88,7 @@ public function login()
 
 
 		    $this->form_validation->set_rules("email_usuario","Email del Usuario","required|valid_email");
-				$this->form_validation->set_rules("contrasena","Contraseña","required");
+			$this->form_validation->set_rules("contrasena","Contraseña","required");
 
 				if ($this->form_validation->run()) {
 							$res = $this->Usuarios_model->login_tienda($email_usuario, $contrasena);
@@ -262,19 +262,33 @@ public function pagar_paypal(){
 
 public function pago_realizado($estado_pago){
 
-		$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
-		$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));
+if ($this->session->userdata("login_tienda")) {
 
-	if ($estado_pago == 'true') {
-			$data = array(
-				'estado_pago'       => $estado_pago,
-				'articulos_comprar' => $articulos_comprar,
-				'suma_compra'       => $suma_compra
-			);
-			$this->layout_tienda->view("tienda/pago_realizado",$data);
-	}else{
-			redirect(base_url().'tienda/carrito');
-	}
+
+					$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
+					$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));
+
+				if ($estado_pago == 'true') {
+						$data = array(
+							'estado_pago'       => $estado_pago,
+							'articulos_comprar' => $articulos_comprar,
+							'suma_compra'       => $suma_compra
+						);
+						$this->layout_tienda->view("tienda/pago_realizado",$data);
+				}else{
+						redirect(base_url().'tienda/carrito');
+				}
+
+}else{
+		redirect(base_url().'tienda/inicio');
+	 }				
+
+
+
+}
+
+public function pago_existente(){
+	$this->layout_tienda->view("tienda/pago_existente");
 }
 
 

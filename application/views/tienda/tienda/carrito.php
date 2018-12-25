@@ -1,5 +1,5 @@
 
-<div class="row boton_comprar">
+<div class="row boton_comprar" style="margin-top: 120px;">
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 		<?php if (!empty($cantidad_articulos)): ?>
@@ -17,7 +17,11 @@
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+		<?php if (!empty($cantidad_articulos)): ?>
+
 				<a  href="" class="btn btn-verde btn-block">COMPRAR POR REDYS</a>
+
+		<?php endif; ?>			
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">

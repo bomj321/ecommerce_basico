@@ -42,7 +42,7 @@ function articulos_tienda($id_ropa,$id_subtipo){
 							url: base_url + "tienda/tienda_articulo/" + id_ropa + "/" + id_subtipo,
 							type:"POST",
 							 beforeSend: function() {
-											 $('#respuesta_ajax_articulo').html("<center><img src='"+base_url+"/public/images/loader.gif' /></center>");
+											 $('#respuesta_ajax_articulo').html("<center><img style='width:250px; height:250px; margin-top:200px;' src='"+base_url+"/public/images/loader.gif' /></center>");
 										},
 							success:function(resp){
 									$("#respuesta_ajax_articulo").html(resp);
@@ -68,8 +68,10 @@ function agregar_carrito($id_usuario,$id_ropa_tienda,$precio_ropa){
 										 toastr.warning('Agregando al Carrito');
 										 toastr.clear()
 									},
-						success:function(resp){
+						success:function(resp){							
 										toastr.success('El producto ha sido agregado al Carrito', 'Producto Agregado');
+										toastr.clear()
+
 						},
 						error:function(){
 										toastr.error('Ha ocurrido un error, intente más tarde.', 'Disculpenos!')
@@ -86,8 +88,8 @@ function agregar_carrito($id_usuario,$id_ropa_tienda,$precio_ropa){
 function actualizar_carrito($id_ropa_tienda)
 {
 
-  var id_ropa_tienda           = $id_ropa_tienda;
-  var id_elemento              = 'carrito_cantidad_'+id_ropa_tienda;
+	var id_ropa_tienda           = $id_ropa_tienda;
+	var id_elemento              = 'carrito_cantidad_'+id_ropa_tienda;
 	var cantidad_existente_input = 'carrito_cantidad_existente_'+id_ropa_tienda;
 	var cantidad_articulo        = document.getElementById(id_elemento).value;
 	var cantidad_existente       = document.getElementById(cantidad_existente_input).value;

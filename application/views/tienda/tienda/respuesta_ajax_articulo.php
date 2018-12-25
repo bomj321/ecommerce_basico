@@ -44,7 +44,7 @@
                     <p>
 
                       <?php if ($this->session->userdata("login_tienda")): ?>
-                        <a onclick="agregar_carrito(<?php echo $this->session->userdata("id_usuario_tienda") ?>,<?php echo $articulo->id_ropa_tienda ?>,<?php echo $articulo->precio_ropa ?>)" data-toggle="tooltip" data-placement="bottom" title="Agregar al Carrito" style="font-size: 1.5em; color: white;" type="button" class="btn btn-info">
+                        <a onclick="agregar_carrito(<?php echo $this->session->userdata("id_usuario_tienda") ?>,<?php echo $articulo->id_ropa_tienda ?>,<?php echo $articulo->precio_ropa ?>)" data-toggle="tooltip" data-placement="bottom" title="Agregar al Carrito" style="font-size: 1.5em; color: white;" type="button" class="btn">
                         <i class="fas fa-shopping-cart"></i>
                       </a>
 
@@ -53,7 +53,7 @@
                         </a>-->
                     <?php endif ?>
 
-                          <a data-toggle="tooltip" data-placement="bottom" title="Existencia" style="font-size: 1.5em; color: white;" type="button" class="btn btn-dark">x<?php echo $articulo->cantidad_ropa ?></a>
+                          <a data-toggle="tooltip" data-placement="bottom" title="Existencia" style="font-size: 1.5em; color: white;" type="button" class="btn">x<?php echo $articulo->cantidad_ropa ?></a>
                      </p>
             </div>
           </div>

@@ -1,19 +1,3 @@
-<?php
-    // Definir un nombre para cachear
-    $archivo = basename($_SERVER['PHP_SELF']);
-    $pagina = str_replace(".php", "", $archivo);
-    // Definir archivo para cachear (puede ser .php también)
-  $archivoCache = base_url().'public/cache/'.$pagina.'.php';
-  // Cuanto tiempo deberá estar este archivo almacenado
-  $tiempo = 3600;
-  // Checar que el archivo exista, el tiempo sea el adecuado y muestralo
-  if (file_exists($archivoCache) && time() - $tiempo < filemtime($archivoCache)) {
-    include($archivoCache);
-      exit;
-  }
-  // Si el archivo no existe, o el tiempo de cacheo ya se venció genera uno nuevo
-  ob_start();
-?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -82,13 +66,5 @@
   <script src="<?php echo base_url();?>public/app_tienda.js"></script>
 <!--SCRIPT PERSONALES Y DE TOASTR-->
 
-<?php
-  // Guarda todo el contenido a un archivo
-  $fp = fopen($archivoCache, 'w');
-  fwrite($fp, ob_get_contents());
-  fclose($fp);
-  // Enviar al navegador
-  ob_end_flush();
-?>
   </body>
 </html>

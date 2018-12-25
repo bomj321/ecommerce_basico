@@ -1,7 +1,7 @@
  <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                          <a class="navbar-brand" href="<?php echo base_url(); ?>">Navbar</a>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                          <a class="navbar-brand" href="<?php echo base_url(); ?>"><span style="font-size: 2rem;"> <span><i class="far fa-eye"></i> </span></a>
                           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                           </button>
@@ -50,7 +50,7 @@
                             </ul>
                         <?php else: ?>
 
-                           <a class="nav-link btn btn-verde mr-5" href="<?php echo base_url();?>tienda/inicio">Iniciar Sesi&oacute;n</a>
+                           <a class="nav-link btn mr-5" href="<?php echo base_url();?>tienda/inicio">Iniciar Sesi&oacute;n</a>
 
                          <?php endif ?>
 

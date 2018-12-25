@@ -15,7 +15,7 @@
    <?php else: ?>
 		   	<?php 
 		   			$this->session->unset_userdata('pago');
-		   			redirect(base_url().'tienda/inicio');
+		   			redirect(base_url());
 				 		
 		   	 ?>
  <?php endif?>

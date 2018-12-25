@@ -11,7 +11,7 @@
 								<input required type="hidden" name="id_persona" value="<?php echo $this->session->userdata("id_usuario_tienda") ?>">
 								<input required type="hidden" name="costo_total" value="<?php echo $suma_compra->suma_compra ?>">
 								<input required type="hidden" name="cantidad_articulos" value="<?php echo $numero_articulos ?>">
-								<button type="submit" class="btn btn-primary btn-block" name="button">COMPRAR POR PAYPAL</button>
+								<button type="submit" class="btn btn-block" name="button">COMPRAR POR PAYPAL</button>
 						<?php echo form_close(); ?>
 		<?php endif; ?>
 			</div>
@@ -19,13 +19,13 @@
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 		<?php if (!empty($cantidad_articulos)): ?>
 
-				<a  href="" class="btn btn-verde btn-block">COMPRAR POR REDYS</a>
+				<a  href="" class="btn btn-block">COMPRAR POR REDYS</a>
 
 		<?php endif; ?>			
 			</div>
 
 			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-				<a  href="" class="btn btn-warning btn-block">TOTAL: <?php echo number_format($suma_compra->suma_compra,4) ?> EUROS</a>
+				<a  href="" class="btn btn-block">TOTAL: <?php echo number_format($suma_compra->suma_compra,4) ?> EUROS</a>
 			</div>
 
 </div>

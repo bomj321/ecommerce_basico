@@ -54,7 +54,7 @@
 
 				  </div>
 
-			  <button type="submit" class="btn btn-primary">Registrarme</button>
+			  <button type="submit" class="btn">Registrarme</button>
     <?php echo form_close();?><!--FORMULARIO CIERRE Y APERTURA-->
 	</div>
 </div>

@@ -51,13 +51,13 @@
 
 <!--MENSAJE PERSONALIZADO-->
 <div class="row redes_sociales">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<h1>Encuentranos!!!</h1>
 	</div>
 
 </div>
 
-<div class="row redes_sociales" style="margin-left: 39%">
+<div class="row redes_sociales" style="margin-left: 39%; margin-bottom: -80px;">
 
 					<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 links_redes_sociales">
 						<a href=""><i class="fab fa-twitter twitter"></i></a>

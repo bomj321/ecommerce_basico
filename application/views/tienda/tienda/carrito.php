@@ -55,8 +55,8 @@
 								<td><?php echo number_format($cantidad_articulo->precio_articulo,4) ?></td>
 								<td><?php echo number_format($cantidad_articulo->cantidad_articulo * $cantidad_articulo->precio_articulo,4)  ?></td>
 								<td>
-									<a class="btn btn-block btn-success" onclick="actualizar_carrito(<?php echo $cantidad_articulo->id_carrito_compra; ?>)">Actualizar</a>
-									<a class="btn btn-block btn-warning" onclick="eliminar_carrito(<?php echo $cantidad_articulo->id_carrito_compra; ?>)">Eliminar</a>
+									<a class="btn btn-block" onclick="actualizar_carrito(<?php echo $cantidad_articulo->id_carrito_compra; ?>)">Actualizar</a>
+									<a class="btn btn-block" onclick="eliminar_carrito(<?php echo $cantidad_articulo->id_carrito_compra; ?>)">Eliminar</a>
 								</td>
 
 						</tr>

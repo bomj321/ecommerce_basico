@@ -1,12 +1,12 @@
 /*NUEVA FUENTE DE LETRA*/
 *
 {
-	font-family: 'Gugi', cursive;
+    font-family: 'Gugi', cursive;
 }
 
 .container-fluid
 {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /*NUEVA FUENTE DE LETRA*/
@@ -20,24 +20,24 @@ body
 /*NAVBAR*/
 footer, .navbar
 {
-/*background: rgba(243,226,199,1);
-background: -moz-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(243,226,199,1)), color-stop(0%, rgba(193,158,103,1)), color-stop(14%, rgba(182,141,76,1)), color-stop(85%, rgba(233,212,179,1)), color-stop(100%, rgba(233,212,179,1)));
-background: -webkit-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
-background: -o-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
-background: -ms-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
-background: linear-gradient(to right, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=1 );*/
-background: #F7A367;
+    /*background: rgba(243,226,199,1);
+    background: -moz-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(243,226,199,1)), color-stop(0%, rgba(193,158,103,1)), color-stop(14%, rgba(182,141,76,1)), color-stop(85%, rgba(233,212,179,1)), color-stop(100%, rgba(233,212,179,1)));
+    background: -webkit-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
+    background: -o-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
+    background: -ms-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
+    background: linear-gradient(to right, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=1 );*/
+    background: #e3e5e8;
 }
 
 
 /*CODIDO DEL FOOTER PARA QUE QUEDE SIEMPRE ABAJO*/
 
 footer { 
-  margin-top: 200px;
-  bottom: 0;  
-  width: 100%;
+    margin-top: 200px;
+    bottom: 0;  
+    width: 100%;
 }
 /*CODIDO DEL FOOTER PARA QUE QUEDE SIEMPRE ABAJO*/
 
@@ -51,8 +51,8 @@ footer {
 /*SLIDER*/
 .clases_slider .carousel-inner img
 {
-	max-height: 450px;
-	margin-bottom: 200px;
+    max-height: 450px;
+    margin-bottom: 200px;
 }
 /*SLIDER*/
 
@@ -60,14 +60,14 @@ footer {
 /*CARDS*/
 .card_div
 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .card_div img
 {
-  padding-top: 10px;
-  width: 200px;
-  height: 200px;
+    padding-top: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 /*CARDS*/
@@ -75,15 +75,15 @@ footer {
 /*MENSAJE TIENDA*/
 .mensaje_clasess h1
 {
-  margin-top: 100px;
-  text-align: center;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .mensaje_clasess p
 {
-  margin-top: 50px;
-  padding-left: 90px;
-  padding-right: 90px;
+    margin-top: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
 }
 
 /*MENSAJE TIENDA*/
@@ -91,47 +91,47 @@ footer {
 /*REDES SOCIALES*/
 .redes_sociales
 {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .redes_sociales h1
 {
-  margin-top: 100px;
-  text-align: center;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .redes_sociales .fab
 {
-  font-size: 3rem;
-  margin-left: 10px;
-  color: black;
+    font-size: 3rem;
+    margin-left: 10px;
+    color: black;
 
 
 }
 
 .links_redes_sociales
 {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .links_redes_sociales .twitter
 {
-  color: #d9534f;
+    color: #d9534f;
 }
 
 .links_redes_sociales .facebook
 {
-  color: #5bc0de;
+    color: #5bc0de;
 }
 
 .links_redes_sociales .google
 {
-  color: #5cb85c;
+    color: #5cb85c;
 }
 
 .links_redes_sociales .instagram
 {
-  color: #428bca;
+    color: #428bca;
 }
 
 
@@ -141,31 +141,31 @@ footer {
 /*FOOTER*/
 .footer_clasess
 {
-  margin-top: 50px;
+    margin-top: 100px;
 }
 /*FOOTER*/
 
 /*CSS PARA EL FORMULARIO DE INICIO*/
 .formulario_inicio
 {
-  margin-top: 10px;
-  margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .titulo_inicio
 {
-  margin-top: 180px;
+    margin-top: 180px;
 }
 
 hr
 {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }
 /*CSS PARA EL FORMULARIO DE INICIO*/
 
@@ -173,72 +173,76 @@ hr
 
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 .borderless {
-	 border: 0 none;
-	background: #FBDF8C;
+    border: 0 none;
+    background: #838587;
 }
 
 .borderless a {
- cursor: pointer;
+    cursor: pointer;
 }
 .borderless
 {
-	color: black;
+    color: white;
 }
 
 .tienda_productos img{
-  width: 100%;
-  height: 700px;
+    width: 100%;
+    height: 700px;
 }
 
 .collapse_boton
 {
-  margin-bottom: -15px;
-  border-radius: 0px;
+    text-decoration: none;
+    margin-bottom: -15px;
+    border-radius: 0px;
 
-background: rgba(136,158,117,1);
-background: -moz-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,158,117,1)), color-stop(100%, rgba(31,59,8,1)));
-background: -webkit-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
-background: -o-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
-background: -ms-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
-background: linear-gradient(to right, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', endColorstr='#1f3b08', GradientType=1 );
+    background: rgba(136,158,117,1);
+    background: -moz-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,158,117,1)), color-stop(100%, rgba(31,59,8,1)));
+    background: -webkit-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+    background: -o-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+    background: -ms-linear-gradient(left, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+    background: linear-gradient(to right, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', endColorstr='#1f3b08', GradientType=1 );
 
 }
 .li_sin_margen li
 {
-  margin-bottom: -18px;
+    margin-bottom: -18px;
 }
 
 .cuerpo_tarjeta{
-	background: rgba(255,146,10,1);
-background: #FBDF8C;
+    background: rgba(255,146,10,1);
+    background: #838587;
 }
 
-.letras_slider_articulo{
-	color: black;
+/*.letras_slider_articulo{
+    color: black;
 }
 
 .carrusel_controles_tienda
 {
-	background: rgba(0,0,0, 0.2) /* Green background with 30% opacity */
-}
+    background: rgba(0,0,0, 0.2) /* Green background with 30% opacity 
+}*/
 
+.card_body_articulos{
+    margin-top: 15px;
+}
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 
 
 
 /*CSS PARA EL CARRITO DE COMPRA*/
 .carrito_compra{
-  margin-top: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .boton_comprar{
-  margin-top: 70px;
-  padding-left: 50px;
-  padding-right: 50px;
+    margin-top: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 /*CSS PARA EL CARRITO DE COMPRA*/
 
@@ -246,8 +250,8 @@ background: #FBDF8C;
 /*CSS PARA LOS BOTONES*/
 
 .btn{
-  background: #EF7358;
-  color: white;
+    background: #a4a6a8;
+    color: white;
 }
 
 /*CSS PARA LOS BOTONES*/
@@ -256,7 +260,7 @@ background: #FBDF8C;
 /*SECCION DE PAGO REALIZADO*/
 .seccion_pago_realizado
 {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 /*SECCION DE PAGO REALIZADO*/

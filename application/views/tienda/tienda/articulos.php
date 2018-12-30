@@ -34,7 +34,7 @@
 
 <!--RESPUESTA AJAX-->
 	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="padding-top: 50px;" id="respuesta_ajax_articulo">
-				<div class="" style="height:500px;">
+				<div style="height:500px;">
 						<center style="margin-top:15rem;"><h2>Por favor seleccione algun articulo de la tienda</h2></center>
 				</div>
 	</div>

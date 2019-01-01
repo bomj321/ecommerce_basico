@@ -34,7 +34,7 @@
 
 							<?php
 							 $formulario = array('class' => 'form-horizontal');
-							 echo form_open('menu/edit_menu',$formulario);
+							 echo form_open('menu/edit_submenu',$formulario);
 							 ?>
 
                <input type="hidden" name="id_submenu" value="<?php echo $editar_submenu->id_sub_tipo_ropa ?>">

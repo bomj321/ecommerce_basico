@@ -51,7 +51,7 @@
 
 								<div class="form-group">
 												<label for="imagen_tipo_ropa">Imagen de Referencia</label>
-												<input required type="file" class="form-control" id="imagen_tipo_ropa" name="imagen_tipo_ropa">
+												<input type="file" class="form-control" id="imagen_tipo_ropa" name="imagen_tipo_ropa">
 												<?php
 															 echo form_error("imagen_tipo_ropa","<span style='margin-top:10px;' class='pull-left label label-danger'>","</span>")
 												 ?>

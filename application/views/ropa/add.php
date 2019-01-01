@@ -111,7 +111,7 @@
                </div>
 
                <div class="form-group">
-                       <label for="imagen_ropa">Imagen de la Prenda(Se recomienda una imagen de alta Resoluci&oacute;n)</label>
+                       <label for="imagen_ropa">Imagen de la Prenda(Se recomienda una imagen de media Resoluci&oacute;n)</label>
                        <input required type="file" class="form-control" id="imagen_ropa" name="imagen_ropa">
                        <?php
                               echo form_error("imagen_ropa","<span style='margin-top:10px;' class='pull-left label label-danger'>","</span>")

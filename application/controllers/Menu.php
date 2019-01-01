@@ -203,7 +203,7 @@ public function update_estado($id_menu,$id_estado)
 
   public function edit_submenu()
   {
-          $id_submenu      = $this->input->post("id_submenu");
+          $id_submenu         = $this->input->post("id_submenu");
           $submenu_tipo       = $this->input->post("submenu");
 
   /*CODIGO PARA CORROBORAR CAMPO*/
@@ -214,7 +214,7 @@ public function update_estado($id_menu,$id_estado)
             $is_unique = "|is_unique[sub_tipo_ropa.nombre_sub_tipo_ropa]";
 
           }
-          $this->form_validation->set_rules("menu","Nombre Menu","required".$is_unique);
+          $this->form_validation->set_rules("submenu","Nombre Menu","required".$is_unique);
   /*CODIGO PARA CORROBORAR CAMPO*/
 
 

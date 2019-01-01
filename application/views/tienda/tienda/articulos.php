@@ -20,7 +20,9 @@
 
 	 	 ?>
 			   <?php foreach ($sub_tipo_ropas->result() as $sub_tipo_ropa): ?>
-								 <li class="list-group-item borderless"><a onclick="articulos_tienda(<?php echo $tipo_ropa->id_tipo_ropa ?>,<?php echo $sub_tipo_ropa->id_sub_tipo_ropa ?>)"><?php echo $sub_tipo_ropa->nombre_sub_tipo_ropa ?></a></li>
+								 <li class="list-group-item borderless">
+								 	<a onclick="articulos_tienda(<?php echo $tipo_ropa->id_tipo_ropa ?>,<?php echo $sub_tipo_ropa->id_sub_tipo_ropa ?>)"><?php echo $sub_tipo_ropa->nombre_sub_tipo_ropa ?></a>
+								 </li>
 							 <?php endforeach; ?>
 						 </ul>
 

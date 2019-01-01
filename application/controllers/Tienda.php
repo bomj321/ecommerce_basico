@@ -130,9 +130,13 @@ public function tienda($id_tipo_topa){
 
 public function tienda_articulo($id_ropa, $id_subtipo)
 {
+
+
+
 	$data = array(
-			'articulos'       => $this->Tienda_model->get_ropa($id_ropa, $id_subtipo)
+			'articulos'       => $this->Tienda_model->get_ropa($id_ropa, $id_subtipo),
 	);
+
 	$this->load->view("tienda/tienda/respuesta_ajax_articulo",$data);
 
 }

@@ -18,8 +18,12 @@
                     <?php endif ?>
 
 
-                    <p> 
+                    <p style="margin-bottom: 0px;"> 
                            <a data-toggle="tooltip" data-placement="bottom" title="Existencia" style="color: black;">Cantidad Existente: <?php echo $articulo->cantidad_ropa ?></a>
+                    </p>
+
+                    <p> 
+                           <a data-toggle="tooltip" data-placement="bottom" title="Precio" style="color: black;">Precio: <?php echo number_format($articulo->precio_ropa,4) ?>€</a>
                     </p>
                   
                 </div>

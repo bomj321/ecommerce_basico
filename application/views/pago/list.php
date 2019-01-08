@@ -19,14 +19,12 @@
                              <tr>
                                  <th>Id de la Compra</th>
                                  <th>Nombre del Usuario</th>
-                                 <th>Articulo Comprado</th>
-                                 <th>Cantidad</th>
-                                 <th>Total de la Compra</th>
                                  <th>Metodo de Pago</th>
                                  <th>Estado de la Compra</th>
                                  <th>Estado de la Entrega</th>
                                  <th>Fecha de la Compra</th>
                                  <th>Numero de Referencia</th>
+                                 <th>Ver Compra</th>
                              </tr>
                          </thead>
                          <tbody>
@@ -35,9 +33,6 @@
                                      <tr>
                                          <td><?php echo $pago->id_compra;?></td>
                                          <td><?php echo $pago->nombre_usuario;?></td>
-                                         <td><?php echo $pago->titulo_ropa;?></td>
-                                         <td><?php echo $pago->cantidad_articulo;?></td>
-                                         <td><?php echo $pago->total_compra;?> E</td>
                                          <td><?php echo $pago->metodo_de_pago;?></td>
                                          <td>
                                            <?php if ($pago->estado_compra == 1): ?>
@@ -56,6 +51,12 @@
                                          </td>
                                          <td><?php echo $pago->fecha_pago;?></td>
                                          <td><?php echo $pago->numero_referencia;?></td>
+                                         <td>
+                                           <button title="Información de la Compra" type="button" class="btn btn-info btn-view-usuario" data-toggle="modal" data-target="#modal-default" class="btn btn-info btn-view" onclick="datoscompra('<?php echo $pago->numero_referencia;?>')">
+                                                        <span class="fa fa-search"></span>
+                                        </button>
+                                           
+                                        </td>
 
                                      </tr>
                                  <?php endforeach;?>
@@ -67,6 +68,10 @@
 
                 </div>
 <!--CONTENIDO-->
+
+<?php require_once('modal_compra.php') ?>
+
+
 
               </div>
              </div>

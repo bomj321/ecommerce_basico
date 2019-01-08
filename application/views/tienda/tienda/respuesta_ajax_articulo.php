@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row" style="min-height: 500px;">
     <?php foreach ($articulos as $articulo): ?>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 card_body_articulos" style="display:inline-block; text-align: center;">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 card_body_articulos" style="display:inline-block; margin-left: 30px;">
             <div class="card" style="width: 18rem;">
                 <img style="width:100%;height: 200px; padding: 20px 20px 20px 20px; overflow:hidden;" src="<?php echo base_url() . 'public/images_ropa/' . $articulo->imagen_ropa ?>" class="card-img-top">
                 <div class="card-body">

@@ -22,6 +22,19 @@ class Pago extends CI_Controller {
 		$this->layout->view("list",$data);
 	}
 
+
+ public function list_detalle($compra)
+	{
+
+    $data = array(
+      'pagos' => $this->Pagos_model->list_detalle($compra),
+    );
+		$this->load->view("pago/detalle",$data);
+
+	}
+
+
+
   public function update($id)
 	{
       $data = array(

@@ -33,7 +33,7 @@
     <title>ecommerce,ropa,zapatos,camisas</title>
   </head>
   <body>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 contenido_pagina">
      <!--HEADER DE LA PAGINA-->
     <?php include 'header_tienda.php'; ?>
      <!--HEADER DE LA PAGINA-->

@@ -117,6 +117,12 @@
                     </ul>
                   </li>
 
+                  <li><a><i class="fa fa-line-chart"></i> Productos Mas vendidos <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url();?>pago/list_products">Listado de Productos</a></li>
+                    </ul>
+                  </li>
+
 
                 </ul>
               </div>
@@ -173,6 +179,11 @@
 
  <!-- jQuery -->
     <script src="<?php echo base_url();?>public/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Highcharts -->
+    <script src="<?php echo base_url();?>public/highcharts.js"></script>
+    <script src="<?php echo base_url();?>public/exporting.js"></script>
+    <script src="<?php echo base_url();?>public/jquery.print.js"></script>
+
     <!-- Bootstrap -->
     <script src="<?php echo base_url();?>public/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->

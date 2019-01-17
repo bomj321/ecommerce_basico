@@ -14,6 +14,7 @@ class Tienda extends CI_Controller {
 		parent::__construct();
 		$this->load->model("Usuarios_model");
 		$this->load->model("Tienda_model");
+		$this->load->model("Pagos_model");
 
 	}
 
@@ -44,7 +45,7 @@ public function logout()
 
 public function registro_usuarios()
 {
-	    $nombre_usuario       = $this->input->post("nombre_usuario");
+	    $nombre_usuario           = $this->input->post("nombre_usuario");
 			$dni_usuario          = $this->input->post("dni_usuario");
 			$email_usuario        = $this->input->post("email_usuario");
 			$contrasena           = $this->input->post("contrasena");
@@ -188,7 +189,7 @@ public function pagar_paypal(){
 			if ($this->session->userdata("login_tienda")) {
 					$costo_total             = $this->input->post("costo_total");
 					$id_persona              = $this->input->post("id_persona");
-				  $cantidad_articulos      =  htmlspecialchars($this->input->post("cantidad_articulos"));
+				    $cantidad_articulos      =  htmlspecialchars($this->input->post("cantidad_articulos"));
 /*SECCION DE BASE DE DATOS PERO SE DESACTIVO PORQUE NO SE PUDO PARSEAR DATA*/
 				/*	$articulos_comprar =  $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda"));
 					$suma_compra       =  $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"));*/
@@ -298,6 +299,37 @@ public function pago_existente(){
 
 /**********************************************SECCION DE COMPRA**********************************************/
 
+/*SECCION DE USUARIO*/
+public function compras($id)
+	{
+
+	if ($this->session->userdata("login_tienda")) {	
+
+	    $data = array(
+	      'pagos' => $this->Pagos_model->list_usuario($id) ,
+	    );
+		$this->layout_tienda->view("tienda/list_usuario_compra",$data);
+
+		}else{
+			redirect(base_url().'tienda/inicio');
+
+		}
+
+
+
+	}
+
+
+	public function list_detalle($compra)
+	{
+
+    $data = array(
+      'pagos' => $this->Pagos_model->list_detalle($compra),
+    );
+		$this->load->view("tienda/tienda/detalle",$data);
+
+	}
+/*SECCION DE USUARIO*/	
 
 
 }

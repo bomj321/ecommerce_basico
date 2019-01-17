@@ -12,7 +12,7 @@ class Pago extends CI_Controller {
 
 	}
 
-
+/*SECCION DE ADMINISTRADOR*/
 
   public function list()
 	{
@@ -21,6 +21,8 @@ class Pago extends CI_Controller {
     );
 		$this->layout->view("list",$data);
 	}
+
+
 
 
  public function list_detalle($compra)
@@ -34,6 +36,10 @@ class Pago extends CI_Controller {
 	}
 
 
+/*SECCION DE ADMINISTRADOR*/	
+
+
+
 
   public function update($id)
 	{
@@ -44,5 +50,24 @@ class Pago extends CI_Controller {
       redirect(base_url()."pago/list");
 
 	}
+
+/*SECCION DE PRODUCTOS MAS VENDIDOS*/
+public function list_products(){
+	$data = array(
+		'productos_vendidos' => $this->Pagos_model->list_productos_vendidos(),
+	);
+
+	$this->layout->view("list_productos_vendidos",$data);
+
+}
+
+	public function getCharts($id_compra,$year){		
+		$resultados = $this->Pagos_model->montos($id_compra,$year);
+		echo json_encode($resultados);
+	}
+
+/*SECCION DE PRODUCTOS MAS VENDIDOS*/
+
+
 
 }

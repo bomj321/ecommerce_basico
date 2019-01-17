@@ -156,3 +156,23 @@ function captura_pantalla()
 });
 }
 /*SECCION PAGO REALIZADO*/
+
+/******CODIGO PARA EL MODAL DE LAS COMPRAS*********/
+function datoscompra($compra){
+  var compra = $compra;
+        $.ajax({
+            url: base_url + "tienda/list_detalle/" + compra,
+            type:"POST",
+            beforeSend: function() {
+                     $('#modal-default .modal-body').html("<center><img src='"+base_url+"/public/images/loader.gif' /></center>");                    
+            },
+            success:function(resp){
+                $("#modal-default .modal-body").html(resp);
+                $("#modal-default .modal-title").html('Información de la Compra');
+                //alert(resp);
+            }
+
+        });
+}
+
+/******CODIGO PARA EL MODAL DE LAS COMPRAS*********/

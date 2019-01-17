@@ -253,7 +253,7 @@ hr
 
 /*CSS PARA LOS BOTONES*/
 
-.btn{
+.btn:not(.listado_compra_usuario){
     background: #a4a6a8;
     color: white;
 }
@@ -279,3 +279,10 @@ html, body {
     height: 100%; /* cross-browser */
 }
 
+
+/*MODAL DE COMPRAS*/
+.modal_compras_usuario{
+    font-size: 13px;
+}
+
+/*MODAL DE COMPRAS*/

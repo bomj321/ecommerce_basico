@@ -44,6 +44,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="opciones">
                                       <a class="dropdown-item" href="<?php echo base_url();?>tienda/carrito">Ver Carrito</a>
+                                      <a class="dropdown-item" href="<?php echo base_url();?>tienda/compras/<?php echo $this->session->userdata("login_tienda") ?>">Ver mis Compras</a>
                                       <a class="dropdown-item" href="<?php echo base_url();?>tienda/logout">Cerrar Sesi&oacute;n</a>
                                     </div>
                                   </li>

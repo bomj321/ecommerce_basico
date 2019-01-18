@@ -182,7 +182,7 @@ $('.carousel').carousel({
   interval: 2000
 })
 /*CARRUSEL*/
-
+/*TITULO DE PRODUCTOS MAS IMPORTANTES*/
 var titulo= document.getElementById('titulo_productos_importantes');
 setInterval(()=>{
 
@@ -201,5 +201,5 @@ setInterval(()=>{
 
 	
 }, 1000);
-
+/*TITULO DE PRODUCTOS MAS IMPORTANTES*/
 

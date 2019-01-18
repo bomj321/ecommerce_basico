@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 20px;">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<center><h1>Productos más Importantes</h1></center>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_titulo_productos_importantes">
+			<center><h1 id="titulo_productos_importantes">Productos más Importantes</h1></center>
 
 	</div>
 </div>
@@ -16,7 +16,7 @@
 			<div class="card" style="width: 18rem;">
 					<center><img class="card-img-top" src="<?php echo base_url().'public/images_ropa/'.$tipo_ropa->imagen_tipo_ropa?>" alt="No hay Imagen"></center>
 					<div class="card-body">
-											<center><a href='<?php echo base_url();?>tienda/tienda/<?php echo $tipo_ropa->id_tipo_ropa ?>' class="btn btn-verde"><?php echo $tipo_ropa->nombre_tipo_ropa ?></a></center>
+											<center><a href='<?php echo base_url();?>tienda/tienda/<?php echo $tipo_ropa->id_tipo_ropa ?>' class="btn btn-info listado_compra_usuario"><?php echo $tipo_ropa->nombre_tipo_ropa ?></a></center>
 					</div>
 			</div>
 		</div>

@@ -176,3 +176,30 @@ function datoscompra($compra){
 }
 
 /******CODIGO PARA EL MODAL DE LAS COMPRAS*********/
+
+/*CARRUSEL*/
+$('.carousel').carousel({
+  interval: 2000
+})
+/*CARRUSEL*/
+
+var titulo= document.getElementById('titulo_productos_importantes');
+setInterval(()=>{
+
+	$(titulo).fadeTo( 600 , 1,()=>{
+	    if (titulo.style.color == 'red') {
+
+			 titulo.style.color ='black';
+			 titulo.style.fontSize = '40.5px';
+
+		}else{
+			 titulo.style.color ='red';
+			 titulo.style.fontSize = '50px';
+
+		}
+  });
+
+	
+}, 1000);
+
+

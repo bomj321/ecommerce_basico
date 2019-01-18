@@ -13,12 +13,12 @@
 
 body
 {
-
+background: #f2f3f4;
 
 }
 
 /*NAVBAR*/
-footer, .navbar
+.navbar
 {
     /*background: rgba(243,226,199,1);
     background: -moz-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 0%, rgba(182,141,76,1) 14%, rgba(233,212,179,1) 85%, rgba(233,212,179,1) 100%);
@@ -41,8 +41,31 @@ footer {
 }
 /*CODIDO DEL FOOTER PARA QUE QUEDE SIEMPRE ABAJO*/
 
+/*FOOTER*/
+.footer_clasess
+{  
+    
+    margin-top: 100px;   
+}
+/*FOOTER*/
 
 
+.icono_header{
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.navbar .fa-shopping-cart{
+    color: green;
+}
+
+.navbar .fa-shopping-bag{
+    color: blue;
+}
+
+.navbar .fa-sign-out-alt{
+    color: black;
+}
 /*NAVBAR*/
 
 
@@ -51,8 +74,16 @@ footer {
 /*SLIDER*/
 .clases_slider .carousel-inner img
 {
-    max-height: 450px;
+    height: 450px;
     margin-bottom: 200px;
+}
+
+.contenedor_slider{
+    max-height: 450px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    margin-top: -10rem;
 }
 /*SLIDER*/
 
@@ -89,6 +120,9 @@ footer {
 /*MENSAJE TIENDA*/
 
 /*REDES SOCIALES*/
+
+
+/*ICONOS TOTALES*/
 .redes_sociales
 {
     margin-top: 30px;
@@ -109,6 +143,19 @@ footer {
 
 
 }
+
+.paypal_icono 
+{
+    font-size: 3rem; 
+
+
+}
+
+.fa-user-tag{
+    font-size: 3rem;
+    color: black;
+}
+/*ICONOS TOTALES*/
 
 .links_redes_sociales
 {
@@ -134,18 +181,15 @@ footer {
 {
     color: #428bca;
 }
+.paypal_icono{
+    color: white;
+}
 
 
 /*REDES SOCIALES*/
 
 
-/*FOOTER*/
-.footer_clasess
-{  
-    
-    margin-top: 100px;   
-}
-/*FOOTER*/
+
 
 /*CSS PARA EL FORMULARIO DE INICIO*/
 .formulario_inicio
@@ -176,7 +220,7 @@ hr
 /*CSS PARA LA TIENDA PARTE VISUALIZAR PRODUCTOS*/
 .borderless {
     border: 0 none;
-    background: #838587;
+    background: #ccc;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -194,7 +238,7 @@ hr
     height: 700px;
 }
 
-.collapse_boton
+/*.collapse_boton
 {
     text-decoration: none;
     margin-bottom: -15px;
@@ -209,15 +253,19 @@ hr
     background: linear-gradient(to right, rgba(136,158,117,1) 0%, rgba(31,59,8,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#889e75', endColorstr='#1f3b08', GradientType=1 );
 
-}
+}*/
 .li_sin_margen li
 {
     margin-bottom: -18px;
 }
 
-.cuerpo_tarjeta{
+.cuerpo_tarjeta{    
     background: rgba(255,146,10,1);
-    background: #838587;
+    background: #ccc;
+}
+
+.cuerpo_tarjeta li {
+    color: black;
 }
 
 /*.letras_slider_articulo{
@@ -286,3 +334,9 @@ html, body {
 }
 
 /*MODAL DE COMPRAS*/
+
+/*TITULO PRODUCTOS*/
+.div_titulo_productos_importantes{   
+    height: 100px;
+}
+/*TITULO PRODUCTOS*/

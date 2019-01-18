@@ -7,7 +7,7 @@
  ?>
  <?php foreach ($tipo_ropas->result() as $tipo_ropa): ?>
 				 <p>
-					 <button class="btn btn-block collapse_boton" type="button" data-toggle="collapse" data-target="#collapse_<?php echo $tipo_ropa->nombre_tipo_ropa ?>" aria-expanded="false" aria-controls="collapse">
+					 <button class="btn btn-block btn-info collapse_boton listado_compra_usuario" type="button" data-toggle="collapse" data-target="#collapse_<?php echo $tipo_ropa->nombre_tipo_ropa ?>" aria-expanded="false" aria-controls="collapse">
 								 <?php echo $tipo_ropa->nombre_tipo_ropa ?>
 						</button>
 				 </p>

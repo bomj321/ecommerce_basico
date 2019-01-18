@@ -41,7 +41,7 @@
 			    <?php echo form_error("contraseña","<div style='margin-top:10px;' class='alert alert-danger'>","</div>")?>
 
 			  </div>
-			  <button type="submit" class="btn">Iniciar Sesi&oacute;n</button>
+			  <button type="submit" class="btn listado_compra_usuario btn-primary">Iniciar Sesi&oacute;n</button>
     <?php echo form_close();?><!--FORMULARIO CIERRE Y APERTURA-->
 	</div>
 </div>

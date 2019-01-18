@@ -117,7 +117,7 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-line-chart"></i> Productos Mas vendidos <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-line-chart"></i> M&aacute;s vendidos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url();?>pago/list_products">Listado de Productos</a></li>
                     </ul>

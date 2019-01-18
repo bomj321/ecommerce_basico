@@ -26,23 +26,26 @@
                          <tbody>
                              <?php if(!empty($productos_vendidos)):?>
                                  <?php foreach($productos_vendidos as $producto_vendido):?>
-                                     <tr>
-                                         <td><?php echo $producto_vendido->id_articulo;?></td>
-                                         <td><?php echo $producto_vendido->titulo_ropa;?></td>
-                                         <td><?php echo $producto_vendido->cantidad_vendidos;?></td>
-                                         <td>
-                                         	<?php echo $numero_formateado = number_format($producto_vendido->total_compra, 2, '.', '');?> Euros                                        	
-                                         </td>                                        
-                                         <td>
-                                         	<center>
-                                         		  <button title="Información de las Ventas" type="button" class="btn btn-info btn-view-usuario" data-toggle="modal" data-target="#modal_ventas" onclick="datosventas('<?php echo $producto_vendido->id_articulo;?>','<?php echo date("Y") ?>')">
-                                                        <span class="fa fa-search"></span>
-                                       			 </button>
-											</center>
-                                           
-                                        </td>
+                                 		<?php if ($producto_vendido->cantidad_vendidos >= 1): ?>                                 			
+                                 		
+			                                     <tr>
+			                                         <td><?php echo $producto_vendido->id_articulo;?></td>
+			                                         <td><?php echo $producto_vendido->titulo_ropa;?></td>
+			                                         <td><?php echo $producto_vendido->cantidad_vendidos;?></td>
+			                                         <td>
+			                                         	<?php echo $numero_formateado = number_format($producto_vendido->total_compra, 2, '.', '');?> Euros                                        	
+			                                         </td>                                        
+			                                         <td>
+			                                         	<center>
+			                                         		  <button title="Información de las Ventas" type="button" class="btn btn-info btn-view-usuario" data-toggle="modal" data-target="#modal_ventas" onclick="datosventas('<?php echo $producto_vendido->id_articulo;?>','<?php echo date("Y") ?>')">
+			                                                        <span class="fa fa-search"></span>
+			                                       			 </button>
+														</center>
+			                                           
+			                                        </td>
 
-                                     </tr>
+			                                     </tr>
+			                            <?php endif ?>         
                                  <?php endforeach;?>
                              <?php endif;?>
                          </tbody>

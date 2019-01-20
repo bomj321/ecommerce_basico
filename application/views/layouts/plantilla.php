@@ -123,6 +123,12 @@
                     </ul>
                   </li>
 
+                  <li><a><i class="fa fa-cogs"></i> Configuraci&oacute;n <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url();?>usuario/configuracion">Configurar Front-end</a></li>
+                    </ul>
+                  </li>
+
 
                 </ul>
               </div>

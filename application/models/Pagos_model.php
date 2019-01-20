@@ -7,7 +7,7 @@ class Pagos_model extends CI_Model {
 
 	public function list()
 	{
-        $this->db->select('cp.*,usuarios.nombre_usuario as nombre_usuario,ropa_tienda.titulo_ropa as titulo_ropa,SUM(total_compra) as total_compra');
+        $this->db->select('cp.*,usuarios.nombre_usuario as nombre_usuario,usuarios.email_usuario as email_usuario,usuarios.telefono_usuario as telefono_usuario,ropa_tienda.titulo_ropa as titulo_ropa,SUM(total_compra) as total_compra');
 		$this->db->from('compras cp');
 		$this->db->join('usuarios usuarios', 'cp.id_usuario = usuarios.id_usuario');
 		$this->db->join('ropa_tienda ropa_tienda', 'cp.id_articulo = ropa_tienda.id_ropa_tienda');

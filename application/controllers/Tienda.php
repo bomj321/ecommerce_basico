@@ -20,8 +20,11 @@ class Tienda extends CI_Controller {
 
 	public function index()
 	{
+		$data = array(
+			'configuracion' => $this->Usuarios_model->obtener_configuracion() ,
+		  );	
 
-		$this->layout_tienda->view("inicio");
+		$this->layout_tienda->view("inicio",$data);
 	}
 
 	
@@ -48,20 +51,22 @@ public function registro_usuarios()
 	    $nombre_usuario           = $this->input->post("nombre_usuario");
 			$dni_usuario          = $this->input->post("dni_usuario");
 			$email_usuario        = $this->input->post("email_usuario");
+			$telefono_usuario     = $this->input->post("telefono_usuario");
 			$contrasena           = $this->input->post("contrasena");
 
 
 			$this->form_validation->set_rules("nombre_usuario","Nombre del Usuario","required");
 			$this->form_validation->set_rules("dni_usuario","Cedula del Usuario","required|is_unique[usuarios.dni_usuario]");
 			$this->form_validation->set_rules("email_usuario","Email del Usuario","required|is_unique[usuarios.email_usuario]|valid_email");
-			$this->form_validation->set_rules("contrasena","Contraseña del Usuario","required");
+			$this->form_validation->set_rules("telefono_usuario","Telefono del Usuario","required|is_unique[usuarios.telefono_usuario]");		$this->form_validation->set_rules("contrasena","Contraseña del Usuario","required");
 
 
 		if ($this->form_validation->run()) {
 			$data = [
 			    'nombre_usuario'   => $nombre_usuario,
 			    'dni_usuario'      => $dni_usuario,
-			    'email_usuario'    => $email_usuario,
+				'email_usuario'    => $email_usuario,
+				'telefono_usuario' => $telefono_usuario,
 			    'contrasena'       => sha1($contrasena),
 			    'tipo_usuario'     => '2',
 			    'estado_usuario'   => '1',

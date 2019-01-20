@@ -19,8 +19,10 @@
                              <tr>
                                  <th>Id de la Compra</th>
                                  <th>Nombre del Usuario</th>
+                                 <th>Correo de Contacto</th>
+                                 <th>Numero de Contacto</th>
                                  <th>Metodo de Pago</th>
-                                 <th>Estado de la Compra</th>
+                                 <th>Estado de la Compra</th>                                 
                                  <th>Estado de la Entrega</th>
                                  <th>Fecha de la Compra</th>
                                  <th>Numero de Referencia</th>
@@ -33,6 +35,8 @@
                                      <tr>
                                          <td><?php echo $pago->id_compra;?></td>
                                          <td><?php echo $pago->nombre_usuario;?></td>
+                                         <td><?php echo $pago->email_usuario;?></td>
+                                         <td><?php echo !empty($pago->telefono_usuario) ? $pago->telefono_usuario : 'Campo Vacio'  ;?></td>
                                          <td><?php echo $pago->metodo_de_pago;?></td>
                                          <td>
                                            <?php if ($pago->estado_compra == 1): ?>

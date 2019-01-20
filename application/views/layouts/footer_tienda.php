@@ -15,9 +15,8 @@
         <div class="col-md-6 mx-auto">
 
           <!-- Content -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Sobre Nosotros</h5>
-          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit.</p>
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4"><?php echo $configuracion->titulo_footer ?></h5>
+          <p><?php echo $configuracion->contenido_footer ?></p>
 
         </div>
         <!-- Grid column -->
@@ -53,23 +52,23 @@
     <!-- Social buttons -->
     <ul class="list-unstyled list-inline text-center redes_sociales">
       <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1 links_redes_sociales">
+        <a class="btn-floating btn-fb mx-1 links_redes_sociales" href='<?php echo $configuracion->link_facebook ?>' target='_blank'>
           <i class="fab fa-facebook-f facebook"> </i>
         </a>
       </li>
       <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1 links_redes_sociales">
+        <a class="btn-floating btn-tw mx-1 links_redes_sociales" href='<?php echo $configuracion->link_twitter ?>' target='_blank'>
           <i class="fab fa-twitter twitter"> </i>
         </a>
       </li>
       <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1 links_redes_sociales">
+        <a class="btn-floating btn-gplus mx-1 links_redes_sociales" href='<?php echo $configuracion->link_google ?>' target='_blank'>
           <i class="fab fa-google-plus-g google"> </i>
         </a>
       </li>
 
       <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1 links_redes_sociales">
+        <a class="btn-floating btn-gplus mx-1 links_redes_sociales" href='<?php echo $configuracion->link_instagram ?>' target='_blank'>
           <i class="fab fa-instagram instagram"></i>
         </a>
       </li>

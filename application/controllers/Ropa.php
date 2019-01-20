@@ -105,7 +105,7 @@ class Ropa extends CI_Controller {
 	}
 
 	public function edit_ropa(){
-		    	$id_ropa_tienda      = $this->input->post("id_ropa_tienda");
+		    	    $id_ropa_tienda      = $this->input->post("id_ropa_tienda");
 					$titulo_ropa         = $this->input->post("titulo_ropa");
 					$color_ropa          = $this->input->post("color_ropa");
 					$descripcion_ropa    = $this->input->post("descripcion_ropa");

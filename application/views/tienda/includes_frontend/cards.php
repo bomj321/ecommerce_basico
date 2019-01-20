@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 20px;">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_titulo_productos_importantes">
-			<center><h1 id="titulo_productos_importantes">Productos más Importantes</h1></center>
+			<center><h1 id="titulo_productos_importantes"><?php echo $configuracion->titulo_producto ?></h1></center>
 
 	</div>
 </div>

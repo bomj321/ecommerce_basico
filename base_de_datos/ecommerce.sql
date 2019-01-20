@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2018 at 01:34 AM
+-- Generation Time: Jan 20, 2019 at 09:28 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -36,16 +36,6 @@ CREATE TABLE `carrito_compra` (
   `cantidad_articulo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
---
--- Dumping data for table `carrito_compra`
---
-
-INSERT INTO `carrito_compra` (`id_carrito_compra`, `id_usuario`, `id_articulo`, `precio_articulo`, `cantidad_articulo`) VALUES
-(3, 1, 4, '250.0000', 2),
-(5, 1, 5, '250.0000', 1),
-(7, 1, 9, '1250.0000', 1),
-(8, 1, 7, '15000.2500', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -70,7 +60,34 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id_compra`, `id_usuario`, `id_articulo`, `cantidad_articulo`, `total_compra`, `metodo_de_pago`, `estado_compra`, `estado_entrega`, `fecha_pago`, `numero_referencia`) VALUES
-(1, 1, 7, 1, '10000.00000', 'Paypal', 1, 0, '2018-12-13', '045646456');
+(10, 1, 20, 2, '2512.00000', 'Paypal', 1, 0, '2019-01-08', 'PAY-9B145531CX7201937LQ2FM3Q'),
+(11, 1, 20, 1, '1256.00000', 'Paypal', 1, 0, '2019-03-08', 'PAY-9B145531CX7201937LQ2FM3Q'),
+(12, 1, 13, 1, '3000.00000', 'Paypal', 1, 0, '2019-01-16', 'PAY-3EP093385C322313GLQ7OEII'),
+(13, 1, 15, 1, '2450.00000', 'Paypal', 1, 0, '2019-01-16', 'PAY-3EP093385C322313GLQ7OEII');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `configuracion`
+--
+
+CREATE TABLE `configuracion` (
+  `id_configuracion` int(11) NOT NULL,
+  `titulo_producto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `titulo_footer` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `contenido_footer` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `link_facebook` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `link_twitter` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `link_google` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `link_instagram` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Dumping data for table `configuracion`
+--
+
+INSERT INTO `configuracion` (`id_configuracion`, `titulo_producto`, `titulo_footer`, `contenido_footer`, `link_facebook`, `link_twitter`, `link_google`, `link_instagram`) VALUES
+(1, 'Secciones mas Importantes', 'Sobre Nosotros', 'Esta sección dira informacion sobre nosotros', 'https://www.facebook.com', 'https://www.twitter.com', 'https://plus.google.com/discover', 'https://www.instagram.com');
 
 -- --------------------------------------------------------
 
@@ -129,13 +146,23 @@ CREATE TABLE `ropa_tienda` (
 --
 
 INSERT INTO `ropa_tienda` (`id_ropa_tienda`, `titulo_ropa`, `color_ropa`, `descripcion_ropa`, `cantidad_ropa`, `tipo_ropa`, `sub_tipo_ropa`, `imagen_ropa`, `precio_ropa`, `estado_ropa`) VALUES
-(4, 'ROPA NEGRA', 'Color fucsia morado', 'Mejor Roma', 35, 3, 2, 'Captura_de_pantalla_de_2018-12-04_02-22-09.png', '250.00000', 1),
-(5, 'Zandalias', 'Negro Mate', 'Mejores Zapatos', 4, 4, 2, 'Ejemplo_moneda.png', '250.00000', 1),
-(6, 'Zandalias', 'Color fucsia morado', 'Zandalias', 5, 3, 2, 'Ejemplo_moneda1.png', '1250.00000', 1),
-(7, 'Ropa Negra', 'Azul', 'Mejor azul', 3, 5, 3, 'Ejemplo_moneda1.png', '15000.25000', 1),
-(8, 'asd', 'asd', 'dfgdfg', 20, 4, 1, 'Captura_de_pantalla_de_2018-12-04_02-22-091.png', '100.00000', 1),
-(9, 'Prueba rezise', 'Prueba rezise', 'Prueba rezise', 200, 3, 2, 'Pantalla_1.png', '1250.00000', 1),
-(10, 'Prueba Imagen', 'Marron', 'Marron', 200, 3, 3, 'Pantalla_2.png', '1578.55000', 1);
+(11, 'Punto Negro', 'Negro Mate', 'Punto echo con algodon', 25, 3, 1, 'punto_mujer.jpg', '1250.00000', 1),
+(12, 'Blusa Azul', 'Azul marino', 'Blusa echa para ellas', 50, 3, 2, 'blusa_mujer.jpg', '2000.00000', 1),
+(13, 'Camiseta', 'Color Blanco', 'Camiseta echa con plumas', 199, 3, 3, 'camiseta_mujer.jpg', '3000.00000', 1),
+(14, 'Sudadera', 'Sudadera Verde', 'Sudadera echa con acrilico', 40, 3, 4, 'sudadera_mujer.jpg', '5000.00000', 1),
+(15, 'Jeans', 'Azul mate', 'Mejores Jeans de Italia', 39, 3, 5, 'jeans_mujer.jpg', '2450.00000', 1),
+(16, 'Chaqueta', 'Amarillo sol', 'Chaqueta para lluvia', 65, 3, 7, 'chaqueta_mujer.jpg', '7800.00000', 1),
+(17, 'Parka', 'Rojo Sangre', 'Parka para fiestas', 96, 3, 8, 'Parka_mujer.jpg', '6320.00000', 1),
+(18, 'Acessorios', 'MultiColores', 'Prendas para verse mejor', 65, 4, 9, 'Accesorios_mujer.jpg', '5000.00000', 1),
+(19, 'Jeans modernos', 'azul marino', 'Mejores jeans de Rusia', 63, 3, 5, 'jeans2_mujer.jpg', '6512.00000', 1),
+(20, 'Punto', 'Negro Mate', 'Punto traidos de Libia', 37, 4, 1, 'punto_hombre.jpg', '1256.00000', 1),
+(21, 'Camisa', 'Color fucsia morado', 'Camisas de EEUU, mejor calidad', 56, 3, 10, 'camisa_hombre.jpg', '4789.00000', 1),
+(22, 'Camiseta', 'Amarillo sol', 'Camiseta listas para usar', 78, 4, 3, 'camiseta_hombre.jpg', '4789.55000', 1),
+(23, 'Jeans', 'verde planta', 'Jeans para nunca pasar desapercibido', 63, 4, 5, 'jeans_hombre.jpg', '578.78000', 1),
+(24, 'Pantalón', 'MultiColores', 'Mejores Pantalones', 41, 4, 11, 'pantalon_nuevo_hombre.jpg', '2489.00000', 1),
+(25, 'Abrigo', 'Gris nube', 'Abrigo para el frio', 69, 4, 12, 'abrigo_hombre.jpg', '48.55000', 1),
+(26, 'Chaqueta ', 'Marron', 'Chaqueta para ver bien', 65, 4, 7, 'chaqueta_hombre.jpg', '56.23000', 1),
+(27, 'Parka', 'parka roja', 'Parka para usar con todo', 33, 4, 8, 'parka_hombre.jpg', '789.00000', 1);
 
 -- --------------------------------------------------------
 
@@ -154,9 +181,18 @@ CREATE TABLE `sub_tipo_ropa` (
 --
 
 INSERT INTO `sub_tipo_ropa` (`id_sub_tipo_ropa`, `nombre_sub_tipo_ropa`, `estado`) VALUES
-(1, 'Brassers', 1),
-(2, 'Zapatos', 1),
-(3, 'Zapatillas', 1);
+(1, 'Punto', 1),
+(2, 'Blusa', 1),
+(3, 'Camiseta', 1),
+(4, 'Sudadera', 1),
+(5, 'Jeans', 1),
+(6, 'Pantalones', 1),
+(7, 'Chaqueta', 1),
+(8, 'Parka', 1),
+(9, 'Acessorios', 1),
+(10, 'Camisa', 1),
+(11, 'Pantalón', 1),
+(12, 'Abrigo', 1);
 
 -- --------------------------------------------------------
 
@@ -177,10 +213,8 @@ CREATE TABLE `tipo_ropa` (
 --
 
 INSERT INTO `tipo_ropa` (`id_tipo_ropa`, `nombre_tipo_ropa`, `imagen_tipo_ropa`, `estado`, `estado_importante`) VALUES
-(3, 'Mujeres', 'Pantalla_21.png', 1, 1),
-(4, 'Hombres', 'Pantalla_12.png', 1, 1),
-(5, 'Ancianos', 'Pantalla_12.png', 1, 1),
-(10, 'Prueba Imagen', 'Pantalla_12.png', 1, 0);
+(3, 'Mujer', 'Autum-k4f-U4011034230932DB-624x385@Ideal.jpg', 1, 1),
+(4, 'Hombre', 'hombre.jpg', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -193,6 +227,7 @@ CREATE TABLE `usuarios` (
   `nombre_usuario` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `dni_usuario` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `email_usuario` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono_usuario` varchar(60) COLLATE utf8_spanish2_ci NOT NULL,
   `contrasena` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `tipo_usuario` int(11) NOT NULL DEFAULT '0',
   `estado_usuario` int(11) NOT NULL
@@ -202,9 +237,10 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `dni_usuario`, `email_usuario`, `contrasena`, `tipo_usuario`, `estado_usuario`) VALUES
-(1, 'Jose Ortega', '24736862', 'jmob612@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1, 1),
-(2, 'Luz Blanco', '24736862', 'jmob612@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 1);
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `dni_usuario`, `email_usuario`, `telefono_usuario`, `contrasena`, `tipo_usuario`, `estado_usuario`) VALUES
+(1, 'Jose Ortega', '24736862', 'jmob612@gmail.com', '', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1, 1),
+(2, 'Luz Blanco', '24736862', 'jmob612@gmail.com', '', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2, 1),
+(3, 'luz', '2478465', 'luz@gmail.com', '0415-88955656', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -225,6 +261,12 @@ ALTER TABLE `compras`
   ADD PRIMARY KEY (`id_compra`),
   ADD KEY `fk_compras_usuarios_idx` (`id_usuario`),
   ADD KEY `fk_compras_articulo_idx` (`id_articulo`);
+
+--
+-- Indexes for table `configuracion`
+--
+ALTER TABLE `configuracion`
+  ADD PRIMARY KEY (`id_configuracion`);
 
 --
 -- Indexes for table `emails`
@@ -274,13 +316,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `carrito_compra`
 --
 ALTER TABLE `carrito_compra`
-  MODIFY `id_carrito_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_carrito_compra` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `configuracion`
+--
+ALTER TABLE `configuracion`
+  MODIFY `id_configuracion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `emails`
@@ -298,25 +346,25 @@ ALTER TABLE `listado_tipos_subtipos`
 -- AUTO_INCREMENT for table `ropa_tienda`
 --
 ALTER TABLE `ropa_tienda`
-  MODIFY `id_ropa_tienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_ropa_tienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `sub_tipo_ropa`
 --
 ALTER TABLE `sub_tipo_ropa`
-  MODIFY `id_sub_tipo_ropa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_sub_tipo_ropa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tipo_ropa`
 --
 ALTER TABLE `tipo_ropa`
-  MODIFY `id_tipo_ropa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_tipo_ropa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

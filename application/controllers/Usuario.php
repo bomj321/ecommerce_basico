@@ -84,6 +84,59 @@ class Usuario extends CI_Controller {
 
 		}
 
+/*SECCION DE CONFIGURACION DEL ENTORNO*/
+public function configuracion(){
+	$data = array(
+		'configuracion' => $this->Usuarios_model->obtener_configuracion() ,
+	  );
+
+	$this->layout->view("configuracion",$data);
+
+}
+
+public function crear_configuracion(){
+	                $id_configuracion   = $this->input->post("id_configuracion");
+					$titulo_producto    = $this->input->post("titulo_producto");
+					$titulo_footer      = $this->input->post("titulo_footer");
+					$contenido_footer   = $this->input->post("contenido_footer");
+					$link_facebook      = $this->input->post("link_facebook");
+					$link_twitter       = $this->input->post("link_twitter");
+					$link_google        = $this->input->post("link_google");
+					$link_instagram     = $this->input->post("link_instagram");				
+
+					$this->form_validation->set_rules("titulo_producto","Titulo de la Ropa","required");
+					$this->form_validation->set_rules("titulo_footer","El titulo del Footer","required");
+					$this->form_validation->set_rules("contenido_footer","Contenido del Footer","required");
+					$this->form_validation->set_rules("link_facebook","Link de Facebook","required");
+					$this->form_validation->set_rules("link_twitter","Link de Twitter","required");
+					$this->form_validation->set_rules("link_google","Link de Google","required");
+					$this->form_validation->set_rules("link_instagram","Link de Instagram","required");
+
+	if ($this->form_validation->run()) {
+		$data = array
+		(
+			'titulo_producto'          =>  trim($titulo_producto),
+			'titulo_footer'            =>  trim($titulo_footer),
+			'contenido_footer'         =>  trim($contenido_footer),
+			'link_facebook '           =>  trim($link_facebook),
+			'link_twitter'             =>  trim($link_twitter),
+			'link_google'              =>  trim($link_google),
+			'link_instagram'           =>  trim($link_instagram),
+		);
+		if (!$this->Usuarios_model->update_configuracion($data,$id_configuracion)) {
+				$this->session->set_flashdata("mensaje","No se pudo guardar la información");
+				$this->configuracion();
+		}else{
+				$this->session->set_flashdata("mensaje","Configuracion Guardada");
+				$this->configuracion();
+		}
+				
+	}else{
+		$this->configuracion();
+	}
+}
+/*SECCION DE CONFIGURACION DEL ENTORNO*/		
+
 
 
 }

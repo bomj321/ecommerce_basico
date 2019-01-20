@@ -45,6 +45,14 @@
 
 				  </div>
 
+				  <div class="form-group">
+				    <label for="telefono_usuario">Telefono de Contacto</label>
+				    <input value="<?php echo set_value('telefono_usuario');?>" type="text" name="telefono_usuario" class="form-control" id="telefono_usuario" aria-describedby="telefono_usuario" placeholder="Ingresa tu Telefono" required>
+				    <small id="telefono_usuario" class="form-text text-muted">Ingresa tu telefono por favor Ej: 0000-5548</small>
+				    <?php echo form_error("telefono_usuario","<div style='margin-top:10px;' class='alert alert-danger'>","</div>")?>
+
+				  </div>
+
 
 
 				  <div class="form-group">

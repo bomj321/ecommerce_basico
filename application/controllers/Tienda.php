@@ -31,12 +31,18 @@ class Tienda extends CI_Controller {
 
 /**********************************************SECCION DE REGISTRO E INICIO DE SESION DE USUARIO**********************************************/
 public function inicio(){
-			$this->layout_tienda->view("register/inicio_sesion");
+    	$data = array(
+			'configuracion' => $this->Usuarios_model->obtener_configuracion() ,
+		  );
+			$this->layout_tienda->view("register/inicio_sesion",$data);
 
 }
 
 public function registrate(){
-			$this->layout_tienda->view("register/register_usuario");
+    	$data = array(
+			'configuracion' => $this->Usuarios_model->obtener_configuracion() ,
+		  );
+			$this->layout_tienda->view("register/register_usuario",$data);
 
 }
 
@@ -58,7 +64,7 @@ public function registro_usuarios()
 			$this->form_validation->set_rules("nombre_usuario","Nombre del Usuario","required");
 			$this->form_validation->set_rules("dni_usuario","Cedula del Usuario","required|is_unique[usuarios.dni_usuario]");
 			$this->form_validation->set_rules("email_usuario","Email del Usuario","required|is_unique[usuarios.email_usuario]|valid_email");
-			$this->form_validation->set_rules("telefono_usuario","Telefono del Usuario","required|is_unique[usuarios.telefono_usuario]");		$this->form_validation->set_rules("contrasena","Contraseña del Usuario","required");
+			$this->form_validation->set_rules("telefono_usuario","Telefono del Usuario","required|is_unique[usuarios.telefono_usuario]");		$this->form_validation->set_rules("contrasena","Contrase単a del Usuario","required");
 
 
 		if ($this->form_validation->run()) {
@@ -76,7 +82,7 @@ public function registro_usuarios()
 			 	$this->session->set_flashdata("registro_correcto","Usuario Registrado");
 				$this->inicio();
 			 }else{
-			 	$this->session->set_flashdata("error_registro_usuario","No se pudo guardar la información");
+			 	$this->session->set_flashdata("error_registro_usuario","No se pudo guardar la informaci坦n");
 			 	$this->registrate();
 			 }
 
@@ -94,13 +100,13 @@ public function login()
 
 
 		    $this->form_validation->set_rules("email_usuario","Email del Usuario","required|valid_email");
-			$this->form_validation->set_rules("contrasena","Contraseña","required");
+			$this->form_validation->set_rules("contrasena","Contrase単a","required");
 
 				if ($this->form_validation->run()) {
 							$res = $this->Usuarios_model->login_tienda($email_usuario, $contrasena);
 
 							if (!$res) {
-								$this->session->set_flashdata("error_datos_incorrectos","El usuario y/o contraseña son incorrectos");
+								$this->session->set_flashdata("error_datos_incorrectos","El usuario y/o contrase単a son incorrectos");
 								$this->inicio();
 							}else{
 								$data  = array(
@@ -127,8 +133,10 @@ public function login()
 
 /**********************************************SECCION DE VER ROPA**********************************************/
 public function tienda($id_tipo_topa){
+   
 			$data = array(
 				'id_tipo_topa_url' => $id_tipo_topa ,
+				'configuracion' => $this->Usuarios_model->obtener_configuracion(),
 			);
 			$this->layout_tienda->view("tienda/articulos",$data);
 
@@ -136,11 +144,9 @@ public function tienda($id_tipo_topa){
 
 public function tienda_articulo($id_ropa, $id_subtipo)
 {
-
-
-
 	$data = array(
 			'articulos'       => $this->Tienda_model->get_ropa($id_ropa, $id_subtipo),
+			'configuracion' => $this->Usuarios_model->obtener_configuracion(),
 	);
 
 	$this->load->view("tienda/tienda/respuesta_ajax_articulo",$data);
@@ -153,7 +159,8 @@ public function carrito(){
 				$data = array(
 					'cantidad_articulos'  => $this->Tienda_model->select_carrito($this->session->userdata("id_usuario_tienda")),
 					'numero_articulos'    => $this->Tienda_model->cantidad_carrito($this->session->userdata("id_usuario_tienda")),
-					'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda"))
+					'suma_compra'         => $this->Tienda_model->suma_carrito($this->session->userdata("id_usuario_tienda")),
+					'configuracion' => $this->Usuarios_model->obtener_configuracion(),
 				);
 				$this->layout_tienda->view("tienda/carrito",$data);
 	}else{
@@ -282,7 +289,8 @@ if ($this->session->userdata("login_tienda")) {
 						$data = array(
 							'estado_pago'       => $estado_pago,
 							'articulos_comprar' => $articulos_comprar,
-							'suma_compra'       => $suma_compra
+							'suma_compra'       => $suma_compra,
+							'configuracion' => $this->Usuarios_model->obtener_configuracion(),
 						);
 						$this->layout_tienda->view("tienda/pago_realizado",$data);
 				}else{
@@ -298,7 +306,10 @@ if ($this->session->userdata("login_tienda")) {
 }
 
 public function pago_existente(){
-	$this->layout_tienda->view("tienda/pago_existente");
+    	$data = array(
+				'configuracion' => $this->Usuarios_model->obtener_configuracion(),
+			);
+	$this->layout_tienda->view("tienda/pago_existente",$data);
 }
 
 
@@ -311,7 +322,8 @@ public function compras($id)
 	if ($this->session->userdata("login_tienda")) {	
 
 	    $data = array(
-	      'pagos' => $this->Pagos_model->list_usuario($id) ,
+	      'pagos' => $this->Pagos_model->list_usuario($id),
+	      'configuracion' => $this->Usuarios_model->obtener_configuracion(),
 	    );
 		$this->layout_tienda->view("tienda/list_usuario_compra",$data);
 
